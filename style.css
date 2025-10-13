@@ -1,0 +1,397 @@
+/* ============================= 1. IMPORTS ET PARAMÈTRES GLOBAUX ============================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+
+/* --- Forcer le site en mode clair (desktop + mobile) --- */
+
+/* Indique au navigateur que le site est conçu pour un thème clair */
+:root {
+  color-scheme: light;
+}
+
+/* Applique le fond et la couleur de texte clairs par défaut */
+html,
+body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Empêche le mode sombre automatique de modifier les couleurs */
+@media (prefers-color-scheme: dark) {
+  html,
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+}
+
+/* Correction spéciale pour Safari iOS (qui ignore parfois color-scheme) */
+@supports (-webkit-touch-callout: none) {
+  html,
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+}
+
+/* --- Police système pour les paragraphes (San Francisco sur Apple) --- */
+.system-font {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  line-height: 1.6;
+  color: #222;
+}
+
+
+
+/* ============================= 2. STYLES GÉNÉRAUX ============================= */
+
+body {
+  font-family: 'Rubik', Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(135deg, #62A78A, #2CA877, #4AA9A1);
+  color: #222;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* ============================= 3. HEADER ET NAVIGATION ============================= */
+
+header {
+  background: rgba(255 255 255 / 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: white;
+  padding: 20px 30px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(44,168,119,0.7);
+  border-radius: 0 0 20px 20px;
+  border: 1px solid rgba(255 255 255 / 0.2);
+}
+
+header h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 2.8rem;
+  letter-spacing: 1.2px;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+/* --- Onglets de navigation --- */
+.nav-tabs {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 15px 0 0 0;
+  margin: 0;
+  gap: 20px;
+  cursor: pointer;
+  user-select: none;
+  align-items: center;
+  font-size: 1rem;
+  flex-wrap: wrap;
+}
+
+/* --- Cacher les onglets de navigation sur mobile --- */
+@media (max-width: 768px) {
+  .nav-tabs {
+    display: none !important;
+  }
+
+  .mobile-nav {
+    display: flex;
+  }
+}
+
+.nav-tabs .tab {
+  padding: 8px 18px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(15px) saturate(180%);
+  -webkit-backdrop-filter: blur(15px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  color: white;
+  font-weight: 700;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  text-decoration: none;
+}
+
+.nav-tabs .tab:hover {
+  background: rgba(255 255 255 / 0.35);
+  text-decoration: none;
+}
+
+.nav-tabs .tab.active {
+  background: rgba(255 255 255 / 0.7);
+  color: #2CA877;
+  box-shadow: 0 0 15px #4AA9A1cc;
+  border-color: rgba(255 255 255 / 0.8);
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* --- Structure du header --- */
+.header-content {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  justify-content: space-between;
+  position: relative;
+  gap: 20px;
+}
+
+/* --- Logo styling --- */
+.logo img {
+  height: 130px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* --- Icône burger --- */
+.burger-icon {
+  display: flex;
+  align-items: center;
+  padding: 10px 0; /* alignement vertical comme les .tab */
+  cursor: pointer;
+}
+
+.burger-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  transition: transform 0.2s ease, filter 0.3s ease;
+}
+
+.burger-icon:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.2) saturate(1.2);
+}
+
+/* --- Adaptation mobile du header --- */
+@media (max-width: 768px) {
+  .logo img {
+    height: 70px;
+    margin: 0;
+  }
+
+  header {
+    text-align: left; /* Alignement à gauche */
+    padding: 4px 12px;
+  }
+
+  .header-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* logo à gauche, titre centré, hamburger à droite */
+    padding: 0 12px; /* un peu de marge horizontale */
+    gap: 15px;
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+
+
+/* ============================= 4. BARRE DE NAVIGATION MOBILE ============================= */
+
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 20px);
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(25px) saturate(130%);
+    -webkit-backdrop-filter: blur(25px) saturate(130%);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 35px;
+    padding: 10px 0;
+    z-index: 1000;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
+    overflow: hidden; /* nécessaire pour le pseudo-élément */
+  }
+
+  /* --- Pseudo-élément pour l’effet de flou sous la barre --- */
+  .mobile-nav::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    transform: translateY(10px);
+    background: inherit;
+    filter: blur(15px);
+    opacity: 0.7;
+    z-index: -1;
+  }
+
+  .mobile-nav .nav-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    flex: 1;
+  }
+
+  .mobile-nav .nav-icon img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+    transition: transform 0.2s ease, filter 0.3s ease;
+  }
+
+  .mobile-nav .nav-icon:hover img {
+    transform: scale(1.1);
+    filter: brightness(1.1) saturate(1.2);
+  }
+
+  main {
+    padding-bottom: 120px;
+  }
+}
+
+
+
+/* ============================= 5. CONTENU PRINCIPAL (MAIN) ============================= */
+
+main {
+  flex: 1;
+  padding: 30px;
+  max-width: 1100px;
+  margin: 30px auto 50px auto;
+  margin-bottom: 30px;
+  background: rgba(255 255 255 / 0.12);
+  border-radius: 20px;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  box-shadow: 0 0 40px #2CA877bb;
+  border: 1px solid rgba(255 255 255 / 0.25);
+  color: white;
+  user-select: text;
+}
+
+.tab-content {
+  display: none;
+  color: white;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+}
+
+
+
+/* ============================= 6. PORTFOLIO ============================= */
+
+#portfolio h2 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin-bottom: 25px;
+}
+
+
+
+/* ============================= 7. À PROPOS ============================= */
+
+#about h2 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin-bottom: 25px;
+}
+
+#about h3 {
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  color: #A4EBCD;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+#about p.system-font {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #fff;
+  max-width: 800px;
+  margin: 0 auto 1.2rem auto;
+  text-align: justify;
+}
+
+
+
+/* ============================= 8. CONTACT ============================= */
+
+#contact h2 {
+  font-weight: 700;
+  font-size: 2.4rem;
+  margin-bottom: 25px;
+}
+
+#contact ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+#contact ul li {
+  margin-bottom: 12px;
+}
+
+#contact a {
+  color: #56DB85;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+#contact a:hover {
+  color: #4AA9A1;
+}
+
+
+
+/* ============================= 9. FOOTER ============================= */
+
+footer {
+  background: rgba(255 255 255 / 0.12);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9rem;
+  box-shadow: inset 0 0 10px #2CA877cc;
+  border-radius: 20px 20px 0 0;
+  border: 1px solid rgba(255 255 255 / 0.25);
+}
+
+
+
