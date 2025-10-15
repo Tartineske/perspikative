@@ -81,3 +81,31 @@ icons.forEach(icon => {
     });
   }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('.mobile-nav');
+  const footer = document.querySelector('footer');
+
+  window.addEventListener('scroll', () => {
+    const footerTop = footer.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    const distance = windowHeight - footerTop;
+    const maxTranslate = nav.offsetHeight + 16; // hauteur de la barre + bottom spacing
+
+    if(distance > 0){
+      // translation progressive
+      const translateY = Math.min(distance, maxTranslate);
+      nav.style.transform = `translate(-50%, ${translateY}px)`;
+
+      // opacité qui diminue progressivement
+      let opacity = 1 - Math.min(distance / maxTranslate, 1);
+      nav.style.opacity = 1 - opacity; // plus on approche du footer, plus ça devient transparent
+    } else {
+      nav.style.transform = 'translateX(-50%)';
+      nav.style.opacity = 1;
+    }
+  });
+});
+
+
