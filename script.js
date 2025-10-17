@@ -86,26 +86,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.querySelector('.mobile-nav');
   const footer = document.querySelector('footer');
 
-  // Création de l'observateur pour détecter quand le footer entre dans le champ de vision
+  // Courbe d'animation fluide et "vivante"
+  const smoothEase = 'cubic-bezier(0.22, 1, 0.36, 1)';
+
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       const ratio = entry.intersectionRatio;
 
-      // Si le footer commence à être visible
       if (ratio > 0) {
-        // effet progressif : translation + fondu
-        nav.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
+        // Barre disparaît (descend)
+        nav.style.transition = `transform 0.5s ${smoothEase}, opacity 0.5s ${smoothEase}`;
         nav.style.transform = 'translate(-50%, 100%)';
         nav.style.opacity = '0';
       } else {
-        // quand le footer n’est plus visible
-        nav.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
+        // Barre réapparaît (remonte franchement mais fluide)
+        nav.style.transition = `transform 0.5s ${smoothEase}, opacity 0.5s ${smoothEase}`;
         nav.style.transform = 'translateX(-50%)';
         nav.style.opacity = '1';
       }
     });
   }, {
-    threshold: 0.05 // le footer est considéré "visible" dès 5 % de visibilité
+    threshold: 0.05
   });
 
   observer.observe(footer);
