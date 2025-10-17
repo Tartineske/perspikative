@@ -86,26 +86,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.querySelector('.mobile-nav');
   const footer = document.querySelector('footer');
 
-  window.addEventListener('scroll', () => {
-    const footerTop = footer.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
+  // Création de l'observateur pour détecter quand le footer entre dans le champ de vision
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const ratio = entry.intersectionRatio;
 
-    const distance = windowHeight - footerTop;
-    const maxTranslate = nav.offsetHeight + 16; // hauteur de la barre + bottom spacing
-
-    if(distance > 0){
-      // translation progressive
-      const translateY = Math.min(distance, maxTranslate);
-      nav.style.transform = `translate(-50%, ${translateY}px)`;
-
-      // opacité qui diminue progressivement
-      let opacity = 1 - Math.min(distance / maxTranslate, 1);
-      nav.style.opacity = 1 - opacity; // plus on approche du footer, plus ça devient transparent
-    } else {
-      nav.style.transform = 'translateX(-50%)';
-      nav.style.opacity = 1;
-    }
+      // Si le footer commence à être visible
+      if (ratio > 0) {
+        // effet progressif : translation + fondu
+        nav.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
+        nav.style.transform = 'translate(-50%, 100%)';
+        nav.style.opacity = '0';
+      } else {
+        // quand le footer n’est plus visible
+        nav.style.transition = 'transform 0.4s ease, opacity 0.4s ease';
+        nav.style.transform = 'translateX(-50%)';
+        nav.style.opacity = '1';
+      }
+    });
+  }, {
+    threshold: 0.05 // le footer est considéré "visible" dès 5 % de visibilité
   });
+
+  observer.observe(footer);
 });
-
-
