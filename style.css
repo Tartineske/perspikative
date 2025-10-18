@@ -279,10 +279,9 @@ header h1 {
 
 main {
   flex: 1;
-  padding: 30px;
+  padding: 10px 30px 15px 30px;
   max-width: 1100px;
-  margin: 30px auto 50px auto;
-  margin-bottom: 30px;
+  margin: 20px auto 30px auto;
   background: rgba(255 255 255 / 0.12);
   border-radius: 20px;
   backdrop-filter: blur(15px);
@@ -378,18 +377,27 @@ main {
   color: #4AA9A1;
 }
 
+/* Surcharge pour la page contact */
+#contact .system-font {
+  color: white;
+  font-weight: 600;
+}
+
+
 
 
 /* ============================= 9. MENTIONS LEGALES ============================= */
 
-/* ========== Faire correspondre le style des Mentions légales à #about ========== */
-
-/* Titres : reprendre exactement #about h2 */
-.mentions-content h1,
-.mentions-content h2 {
+.mentions-content h1 {
   font-weight: 700;
-  font-size: 2.4rem;      /* même taille que #about h2 */
+  font-size: 2.4rem;
   margin-bottom: 25px;
+  text-align: center;
+}
+
+.mentions-content h2 {
+  font-size: 1.4rem;
+  margin-bottom: 14px;
 }
 
 /* Si tu utilises des <h3> dans les mentions, reprendre #about h3 */
@@ -425,16 +433,24 @@ main {
   opacity: 0.8;
 }
 
-/* Responsive: garde la même logique que #about -> adapte les tailles/espacements */
+/* --- Responsive --- */
+
 @media (max-width: 992px) {
   .mentions-content {
     padding: 32px;
   }
-  .mentions-content h1,
-  .mentions-content h2 {
-    font-size: 2rem;
-    margin-bottom: 18px;
+
+  .mentions-content h1 {
+    font-size: 1.6rem;
+    margin-bottom: 14px;
+    text-align: center;
   }
+
+  .mentions-content h2 {
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+  }
+
   .mentions-content p,
   .mentions-content p.system-font {
     font-size: 1rem;
@@ -446,11 +462,18 @@ main {
     padding: 22px;
     border-radius: 14px;
   }
-  .mentions-content h1,
-  .mentions-content h2 {
+
+  .mentions-content h1 {
     font-size: 1.6rem;
     margin-bottom: 14px;
+    text-align: center;
   }
+
+  .mentions-content h2 {
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+  }
+
   .mentions-content h3 {
     font-size: 1.1rem;
   }
