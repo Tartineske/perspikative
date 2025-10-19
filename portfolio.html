@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio</title>
+
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: dark)">
+
+  <link rel="icon" type="image/png" href="favicon-light.png" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="favicon-dark.png" media="(prefers-color-scheme: light)">
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet" />
+</head>
+
+<body class="portfolio-page">
+
+  <!-- ===== Navigation mobile ===== -->
+  <nav class="mobile-nav">
+    <a href="index.html" class="nav-icon" title="Accueil">
+      <img src="logos/accueil.svg" alt="Accueil">
+    </a>
+    <a href="portfolio.html" class="nav-icon active" title="Portfolio">
+      <img src="logos/portfolio.svg" alt="Portfolio">
+    </a>
+    <a href="rechercher.html" class="nav-icon" title="Rechercher">
+      <img src="logos/rechercher.svg" alt="Rechercher">
+    </a>
+    <a href="a-propos.html" class="nav-icon" title="À propos">
+      <img src="logos/a-propos.svg" alt="À propos">
+    </a>
+    <a href="contact.html" class="nav-icon" title="Contact">
+      <img src="logos/contact.svg" alt="Contact">
+    </a>
+  </nav>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <img src="logo.svg" alt="Perspikative logo">
+      </div>
+
+      <div class="nav-right">
+        <ul class="nav-tabs">
+          <li><a href="index.html" class="tab">ACCUEIL</a></li>
+          <li><a href="portfolio.html" class="tab active">PORTFOLIO</a></li>
+          <li><a href="a-propos.html" class="tab">À PROPOS</a></li>
+          <li><a href="contact.html" class="tab">CONTACT</a></li>
+        </ul>
+        <a href="#menu" class="burger-icon" title="Menu">
+          <img src="logos/menu.svg" alt="Menu">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Contenu principal ===== -->
+  <main id="portfolio">
+    <h2>PORTFOLIO</h2>
+
+  <div class="portfolio-buttons">
+    <a href="portfolio/creations.html" class="portfolio-card">
+      <img src="portfolio/creations.jpg" alt="Créations">
+      <span>CRÉATIONS</span>
+    </a>
+
+    <a href="portfolio/illustrations.html" class="portfolio-card">
+      <img src="portfolio/illustrations.jpg" alt="Illustrations">
+      <span>ILLUSTRATIONS</span>
+    </a>
+
+    <a href="portfolio/projets.html" class="portfolio-card">
+      <img src="portfolio/projets.jpg" alt="Projets">
+      <span>PROJETS</span>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Perspikative. Tous droits réservés.</p>
+    <p><a href="mentions-legales.html" class="footer-link">Mentions légales</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
