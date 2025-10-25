@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Créations</title>
+
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: dark)">
+
+  <link rel="icon" type="image/png" href="../favicon-light.png" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="../favicon-dark.png" media="(prefers-color-scheme: light)">
+
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet" />
+</head>
+
+<body class="creations">
+
+  <nav class="mobile-nav">
+    <a href="../index.html" class="nav-icon" title="Accueil">
+      <img src="../logos/accueil.svg" alt="Accueil">
+    </a>
+    <a href="../portfolio.html" class="nav-icon" title="Portfolio">
+      <img src="../logos/portfolio.svg" alt="Portfolio">
+    </a>
+    <a href="../rechercher.html" class="nav-icon" title="Rechercher">
+      <img src="../logos/rechercher.svg" alt="Rechercher">
+    </a>
+    <a href="../a-propos.html" class="nav-icon" title="À propos">
+      <img src="../logos/a-propos.svg" alt="À propos">
+    </a>
+    <a href="../contact.html" class="nav-icon" title="Contact">
+      <img src="../logos/contact.svg" alt="Contact">
+    </a>
+  </nav>
+
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <img src="../logo.svg" alt="Perspikative logo">
+      </div>
+
+      <div class="nav-right">
+        <ul class="nav-tabs">
+          <li><a href="../index.html" class="tab">ACCUEIL</a></li>
+          <li><a href="../portfolio.html" class="tab">PORTFOLIO</a></li>
+          <li><a href="../a-propos.html" class="tab">À PROPOS</a></li>
+          <li><a href="../contact.html" class="tab">CONTACT</a></li>
+        </ul>
+
+        <input type="checkbox" id="menuToggle" />
+        <label for="menuToggle" class="burger-icon" title="Menu">
+          <img id="menuIcon" src="../logos/menu.svg" alt="Menu">
+        </label>
+      <div class="mobile-menu">
+        <ul>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../art-challenge.html">ART CHALLENGE</a></li>
+          <li><a href="../parametres.html">PARAMÈTRES</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="blur-overlay"></div>
+
+  <main>
+    <section id="creations">
+      <h2>CRÉATIONS</h2>
+      <div class="masonry active">
+        <img src="creations/creation39.jpg" alt="Création 39">
+        <img src="creations/creation38.jpg" alt="Création 38">
+        <img src="creations/creation37.jpg" alt="Création 37">
+        <img src="creations/creation36.jpg" alt="Création 36">
+        <img src="creations/creation35.jpg" alt="Création 35">
+        <img src="creations/creation34.jpg" alt="Création 34">
+        <img src="creations/creation33.jpg" alt="Création 33">
+        <img src="creations/creation32.jpg" alt="Création 32">
+        <img src="creations/creation31.jpg" alt="Création 31">
+        <img src="creations/creation30.jpg" alt="Création 30">
+        <img src="creations/creation29.jpg" alt="Création 29">
+        <img src="creations/creation28.jpg" alt="Création 28">
+        <img src="creations/creation27.jpg" alt="Création 27">
+        <img src="creations/creation26.jpg" alt="Création 26">
+        <img src="creations/creation25.jpg" alt="Création 25">
+        <img src="creations/creation24.jpg" alt="Création 24">
+        <img src="creations/creation23.jpg" alt="Création 23">
+        <img src="creations/creation22.jpg" alt="Création 22">
+        <img src="creations/creation21.jpg" alt="Création 21">
+        <img src="creations/creation20.jpg" alt="Création 20">
+        <img src="creations/creation19.jpg" alt="Création 19">
+        <img src="creations/creation18.jpg" alt="Création 18">
+        <img src="creations/creation17.jpg" alt="Création 17">
+        <img src="creations/creation16.jpg" alt="Création 16">
+        <img src="creations/creation15.jpg" alt="Création 15">
+        <img src="creations/creation14.jpg" alt="Création 14">
+        <img src="creations/creation13.jpg" alt="Création 13">
+        <img src="creations/creation12.jpg" alt="Création 12">
+        <img src="creations/creation11.jpg" alt="Création 11">
+        <img src="creations/creation10.jpg" alt="Création 10">
+        <img src="creations/creation9.jpg" alt="Création 9">
+        <img src="creations/creation8.jpg" alt="Création 8">
+        <img src="creations/creation7.jpg" alt="Création 7">
+        <img src="creations/creation6.jpg" alt="Création 6">
+        <img src="creations/creation5.jpg" alt="Création 5">
+        <img src="creations/creation4.jpg" alt="Création 4">
+        <img src="creations/creation3.jpg" alt="Création 3">
+        <img src="creations/creation2.jpg" alt="Création 2">
+        <img src="creations/creation1.jpg" alt="Création 1">
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Perspikative. Tous droits réservés.</p>
+    <p><a href="../mentions-legales.html" class="footer-link">Mentions légales</a></p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    menuToggle.addEventListener('change', (e) => {
+      document.body.classList.toggle('menu-open', e.target.checked);
+    });
+  </script>
+
+  <script src="../script.js"></script>
+</body>
+</html>
