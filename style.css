@@ -551,89 +551,6 @@ body.home {
 
 
 
-/* ------ Section CTA ------ */
-
-.cta-section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 80px 20px;
-  margin-top: 40px;
-}
-
-.cta-container {
-  backdrop-filter: blur(20px);
-  background: rgba(255, 255, 255, 0.15);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 2rem;
-  padding: 60px 40px;
-  max-width: 900px;
-  text-align: center;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.1);
-}
-
-.cta-container h2 {
-  font-family: 'Rubik', sans-serif;
-  font-size: 2rem;
-  color: #fff;
-  margin-bottom: 15px;
-}
-
-.cta-subtext {
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 40px;
-  font-size: 1.1rem;
-}
-
-.cta-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-
-.cta-btn {
-  padding: 14px 28px;
-  border-radius: 1.5rem;
-  text-decoration: none;
-  font-weight: 700;
-  transition: 0.25s ease;
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  color: #fff;
-}
-
-.cta-btn:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.1);
-}
-
-/* Spécifique à chaque bouton */
-.cta-btn.whatsapp { background: rgba(255, 255, 255, 0.1); }
-.cta-btn.portfolio { background: rgba(255, 255, 255, 0.1); }
-.cta-btn.about { background: rgba(255, 255, 255, 0.1); }
-
-@media (max-width: 700px) {
-  .cta-container {
-    padding: 50px 25px;
-  }
-
-  .cta-container h2 {
-    font-size: 1.6rem;
-  }
-
-  .cta-subtext {
-    font-size: 1rem;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-  }
-}
-
-
-
-
 /* ============================= 7. PORTFOLIO ============================= */
 
 #portfolio {
@@ -1127,6 +1044,7 @@ footer a.footer-link:hover {
   transform: scale(1.1);
   opacity: 1;
 }
+
 
 
 
