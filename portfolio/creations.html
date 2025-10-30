@@ -13,6 +13,123 @@
 
   <link rel="stylesheet" href="../style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet" />
+
+  <style>
+
+    .lightbox-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(10, 10, 10, 0.6);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s ease, visibility 0.25s;
+      z-index: 9999;
+    }
+
+    .lightbox-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .lightbox-window {
+      background: #fff;
+      border-radius: 16px;
+      max-width: 900px;
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      overflow: hidden;
+      padding: 20px;
+      animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+      from { transform: scale(0.95); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .lightbox-left {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lightbox-left img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .lightbox-right {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .lightbox-right h3 {
+      font-family: 'Rubik', sans-serif;
+      margin-top: 0;
+    }
+
+    .lightbox-right p {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .lightbox-extra-images {
+      margin-top: 15px;
+      padding-top: 10px;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .lightbox-extra-images img {
+      max-width: 100px; /* ou la taille max que tu veux */
+      height: auto;
+      border-radius: 8px;
+      object-fit: contain; /* ou cover si tu veux remplir le cadre */
+    }
+
+
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(0,0,0,0.6);
+      color: #fff;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @media (max-width: 700px) {
+      .lightbox-window {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .lightbox-right {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 
 <body class="creations">
@@ -70,7 +187,15 @@
     <section id="creations">
       <h2>CRÉATIONS</h2>
       <div class="masonry active">
-        <img src="creations/creation39.jpg" alt="Création 39">
+        <img
+          class="prspk-thumb"
+          src="creations/39/39.jpg"
+          alt="Créations 39"
+          data-title="A WANDERER IN GINGER WOOD"
+          data-desc="🎨 Teintes : Orange, vert, rouge, bleu, rose, jaune et mauve ⌛️ Temps de travail : 2h30 ❇️ Particularités : Nouveau style graphique expérimenté 💭 Imagination : 60% réfléchie 40% improvisée 💬 Commentaires : "Because there are things that we can't say". Parce que parfois, juste marcher ça fait du bien. Parce que l'automne nous accueille, parce que cette fille, qui marche, elle avait juste besoin de ça. Juste de s'échapper quelques instants. Elle reviendra. Ginger Wood fera écho à nouveau 🍁"
+          data-images="creations/39/39-mini1.jpg,creations/39/39-mini2.jpg,creations/39/39-mini3.jpg"
+        />
+ 
         <img src="creations/creation38.jpg" alt="Création 38">
         <img src="creations/creation37.jpg" alt="Création 37">
         <img src="creations/creation36.jpg" alt="Création 36">
@@ -140,10 +265,56 @@
     <img src="../logos/rechercher.svg" alt="Rechercher">
   </a>
 
+  <!-- LIGHTBOX STRUCTURE -->
+  <div class="lightbox-overlay" id="lightbox">
+    <div class="lightbox-window">
+      <button class="lightbox-close" id="lightbox-close">&times;</button>
+      <div class="lightbox-left">
+        <img id="lightbox-img" src="" alt="">
+      </div>
+      <div class="lightbox-right">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-desc"></p>
+        <div class="lightbox-extra-images" id="lightbox-extra"></div>
+      </div>
+    </div>
+  </div>
+
   <script>
-    const menuToggle = document.getElementById('menuToggle');
-    menuToggle.addEventListener('change', (e) => {
-      document.body.classList.toggle('menu-open', e.target.checked);
+    const thumbs = document.querySelectorAll('.prspk-thumb');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxTitle = document.getElementById('lightbox-title');
+    const lightboxDesc = document.getElementById('lightbox-desc');
+    const lightboxExtra = document.getElementById('lightbox-extra');
+    const closeBtn = document.getElementById('lightbox-close');
+
+    thumbs.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxTitle.textContent = img.dataset.title || '';
+        lightboxDesc.textContent = img.dataset.desc || '';
+
+        lightboxExtra.innerHTML = '';
+        if (img.dataset.images) {
+          const extra = img.dataset.images.split(',');
+          extra.forEach(url => {
+            const small = document.createElement('img');
+            small.src = url.trim();
+            lightboxExtra.appendChild(small);
+          });
+        }
+
+        lightbox.classList.add('active');
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.classList.remove('active');
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) lightbox.classList.remove('active');
     });
   </script>
 
