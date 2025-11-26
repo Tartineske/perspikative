@@ -340,4 +340,39 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+// ============================= 9. GESTION DE L'ANIMATION =============================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const animationToggle = document.getElementById("animations");
+
+  // Si rien n'est enregistré, on prend l’état du système
+  if (localStorage.getItem("reduceMotion") === null) {
+    const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (prefersReduced) {
+      document.body.classList.add("reduce-motion");
+      animationToggle.checked = false;
+      localStorage.setItem("reduceMotion", "true");
+    }
+  } else {
+    // Sinon on applique le choix utilisateur
+    const saved = localStorage.getItem("reduceMotion") === "true";
+    if (saved) {
+      document.body.classList.add("reduce-motion");
+      animationToggle.checked = false;
+    }
+  }
+
+  // Clic sur le toggle
+  animationToggle.addEventListener("change", () => {
+    if (animationToggle.checked) {
+      document.body.classList.remove("reduce-motion");
+      localStorage.setItem("reduceMotion", "false");
+    } else {
+      document.body.classList.add("reduce-motion");
+      localStorage.setItem("reduceMotion", "true");
+    }
+  });
+});
+
 // ============================= FIN DU SCRIPT =============================
