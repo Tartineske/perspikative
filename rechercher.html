@@ -3,13 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Perspikative</title>
-
-  <meta property="og:title" content="𝗣𝗲𝗿𝘀𝗽𝗶𝗸𝗮𝘁𝗶𝘃𝗲" />
-  <meta property="og:description" content="✏️ i make art. welcome to my world" />
-  <meta property="og:image" content="https://tartineske.github.io/perspikative/preview.jpg" />
-  <meta property="og:url" content="https://tartineske.github.io/perspikative/" />
-  <meta property="og:type" content="website" />
+  <title>Rechercher</title>
 
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: dark)">
@@ -21,10 +15,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet" />
 </head>
 
-<body class="home">
+<body class="search">
 
   <nav class="mobile-nav">
-    <a href="index.html" class="nav-icon active" title="Accueil">
+    <a href="index.html" class="nav-icon" title="Accueil">
       <img src="logos/accueil.svg" alt="Accueil">
     </a>
     <a href="portfolio.html" class="nav-icon" title="Portfolio">
@@ -46,10 +40,9 @@
       <div class="logo">
         <img src="logo.svg" alt="Perspikative logo">
       </div>
-
       <div class="nav-right">
         <ul class="nav-tabs">
-          <li><a href="index.html" class="tab active">ACCUEIL</a></li>
+          <li><a href="index.html" class="tab">ACCUEIL</a></li>
           <li><a href="portfolio.html" class="tab">PORTFOLIO</a></li>
           <li><a href="a-propos.html" class="tab">À PROPOS</a></li>
           <li><a href="contact.html" class="tab">CONTACT</a></li>
@@ -61,9 +54,9 @@
         </label>
       <div class="mobile-menu">
         <ul>
-          <li><a href="faq/faq.html">FAQ</a></li>
-          <li><a href="art-challenge.html">ART CHALLENGE</a></li>
-          <li><a href="parametres.html">PARAMÈTRES</a></li>
+          <li><a href="faq/faq.html" class="tab">FAQ</a></li>
+          <li><a href="art-challenge.html" class="tab">ART CHALLENGE</a></li>
+          <li><a href="parametres.html" class="tab">PARAMÈTRES</a></li>
           </ul>
         </div>
       </div>
@@ -72,34 +65,10 @@
 
   <div class="blur-overlay"></div>
 
-  <section id="home-wrapper">
-    <div id="home">
-      <h1 class="titre-accueil">BIENVENUE !</h1>
-      </div>
-    </div>
-  <section>
-
-  <section class="cta-section">
-    <div class="cta-container">
-      <h2>PLONGE DANS L'UNIVERS DE PERSPIKATIVE</h2>
-      <p class="cta-subtext">
-        Explore, suis et découvre un univers de création visuelle et d’idées en mouvement.
-      </p>
-
-      <div class="cta-buttons">
-        <a href="https://www.whatsapp.com/channel/0029VaKP3Kd5Ui2gky1r5m3y" 
-           target="_blank" class="cta-btn whatsapp">
-          Suis moi sur WhatsApp !
-        </a>
-
-        <a href="portfolio.html" class="cta-btn portfolio">
-          Visite le Portfolio
-        </a>
-
-        <a href="a-propos.html" class="cta-btn about">
-          Découvre les coulisses...
-        </a>
-      </div>
+  <section class="search-page">
+    <div class="search-bubble">
+      <img src="logos/rechercher.svg" alt="Rechercher" class="search-logo">
+      <input type="text" placeholder="Recherchez..." class="search-input">
     </div>
   </section>
 
@@ -126,10 +95,6 @@
     <p><a href="mentions-legales.html" class="footer-link">Mentions légales</a></p>
     <p><a href="politique-de-confidentialite.html" class="footer-link">Politique de confidentialité</a></p>
   </footer>
-
-  <a href="rechercher.html" class="search-float-btn" title="Rechercher">
-    <img src="logos/rechercher.svg" alt="Rechercher">
-  </a>
 
   <script>
     const menuToggle = document.getElementById('menuToggle');
