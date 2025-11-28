@@ -1,3 +1,32 @@
+/* ===================== VERSION MOBILE LÉGÈRE ===================== */
+@media (max-width: 300px) { /* plus réaliste pour mobile */
+  /* Layout principal */
+  .layout-3colonnes {
+    display: none !important;
+  }
+  .layout-2colonnes {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important; /* espace réduit entre les colonnes */
+  }
+
+  /* Colonnes */
+  .layout-2colonnes .col {
+    width: 100% !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Images */
+  .layout img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 6px !important; /* coins plus subtils */
+    object-fit: cover !important;
+  }
+}
+
+
+
 /* ============================= 1. IMPORTS ET PARAMÈTRES GLOBAUX ============================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
@@ -930,7 +959,7 @@ main.creations h2 {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 300px) {
   .layout-2colonnes {
     flex-direction: column;
   }
@@ -938,6 +967,8 @@ main.creations h2 {
     width: 100%;
   }
 }
+
+
 
 
 
@@ -963,14 +994,13 @@ main.creations h2 {
   height: auto;
   border-radius: 12px;
   object-fit: cover;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
 }
 
 /* Effet au survol */
 .layout img:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+  box-shadow: 0 10px 16px rgba(0,0,0,0.30);
 }
 
 
