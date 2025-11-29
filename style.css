@@ -3,17 +3,20 @@
   /* Layout principal */
   .layout-3colonnes {
     display: none !important;
+    margin: none !important;
   }
   .layout-2colonnes {
     display: flex !important;
     flex-direction: column !important;
     gap: 0.5rem !important; /* espace réduit entre les colonnes */
+    margin: none !important;
   }
 
   /* Colonnes */
   .layout-2colonnes .col {
     width: 100% !important;
     gap: 0.5rem !important;
+    margin: none !important;
   }
 
   /* Images */
@@ -22,8 +25,42 @@
     height: auto !important;
     border-radius: 6px !important; /* coins plus subtils */
     object-fit: cover !important;
+    margin: none !important;
   }
 }
+
+
+@media (max-width: 480px) {
+  main {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
+
+  .creations {
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+  }
+
+  .layout-2colonnes {
+    gap: 0.5rem !important;
+  }
+
+  .layout-2colonnes img {
+    border-radius: 5px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  main.creations,
+  main.creations .layout-2colonnes,
+  main.creations .layout-3colonnes {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+}
+
+
+
 
 
 
