@@ -5,161 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Rechercher | Perspikative</title>
 
-  <!-- Méta-données -->
   <meta name="description" content="Rechercher une oeuvre, un projet ou une illustration dans l'univers de Perspikative.">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
 
-  <!-- Icônes -->
   <link rel="icon" type="image/png" href="favicon-light.png" media="(prefers-color-scheme: dark)">
   <link rel="icon" type="image/png" href="favicon-dark.png" media="(prefers-color-scheme: light)">
 
-  <!-- Styles et Polices -->
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
-
-  <!-- Style Spécifique pour la page Recherche -->
-  <style>
-    /* Centrage du bloc de recherche */
-    .search-page {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 60vh; /* Garde de l'espace */
-      padding-top: 20px;
-    }
-
-    /* Conteneur de la barre */
-    .search-container {
-      width: 100%;
-      max-width: 600px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-    }
-
-    /* Style de la bulle/barre de recherche */
-    .search-bubble {
-      display: flex;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 40px;
-      padding: 10px 20px;
-      width: 100%;
-      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .search-bubble:focus-within {
-      background: rgba(255, 255, 255, 0.25);
-      box-shadow: 0 10px 40px rgba(44, 168, 119, 0.2);
-    }
-
-    .search-logo {
-      width: 24px;
-      height: 24px;
-      opacity: 0.8;
-      margin-right: 10px;
-    }
-
-    .search-input {
-      border: none;
-      background: transparent;
-      outline: none;
-      font-size: 1.1rem;
-      color: #fff;
-      width: 100%;
-      font-family: 'Rubik', sans-serif;
-    }
-
-    .search-input::placeholder {
-      color: rgba(255, 255, 255, 0.6);
-      font-weight: 400;
-    }
-
-    /* Grille des résultats */
-    #searchResults {
-      width: 100%;
-      margin-top: 30px;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      padding-bottom: 40px;
-    }
-
-    /* Une carte de résultat */
-    .result-item {
-      display: flex;
-      align-items: center;
-      background: rgba(255, 255, 255, 0.12);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 18px;
-      padding: 12px;
-      text-decoration: none;
-      transition: transform 0.2s ease, background 0.2s ease;
-      animation: fadeInUp 0.4s ease;
-    }
-
-    .result-item:hover {
-      transform: translateX(5px);
-      background: rgba(255, 255, 255, 0.22);
-    }
-
-    /* Miniature image résultat */
-    .result-thumb {
-      width: 55px;
-      height: 55px;
-      border-radius: 12px;
-      object-fit: cover;
-      margin-right: 15px;
-      background: rgba(0,0,0,0.1);
-      border: 1px solid rgba(255,255,255,0.1);
-    }
-
-    /* Texte résultat */
-    .result-info h3 {
-      margin: 0;
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-    }
-
-    .result-info p {
-      margin: 4px 0 0 0;
-      color: #ddd;
-      font-size: 0.85rem;
-      opacity: 0.8;
-    }
-
-    /* Badge Catégorie */
-    .badge-cat {
-      display: inline-block;
-      font-size: 0.7rem;
-      background: rgba(44, 168, 119, 0.6);
-      color: white;
-      padding: 2px 8px;
-      border-radius: 8px;
-      margin-left: 8px;
-      vertical-align: middle;
-      font-weight: normal;
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
 </head>
 
 <body class="search">
 
-  <!-- ================= NAV MOBILE DU BAS (Thumb Zone) ================= -->
+  <!-- Nav Mobile (Bas de l'écran) -->
   <nav class="mobile-nav">
     <a href="index.html" class="nav-icon" title="Accueil">
       <img src="logos/accueil.svg" alt="Accueil">
@@ -178,14 +37,13 @@
     </a>
   </nav>
 
-  <!-- ================= HEADER (Logo & Menu) ================= -->
+  <!-- Header -->
   <header>
     <div class="header-content">
       <div class="logo">
         <a href="index.html"><img src="logo.svg" alt="Perspikative logo"></a>
       </div>
       <div class="nav-right">
-        <!-- Menu Desktop -->
         <ul class="nav-tabs">
           <li><a href="index.html" class="tab">ACCUEIL</a></li>
           <li><a href="portfolio.html" class="tab">PORTFOLIO</a></li>
@@ -193,13 +51,11 @@
           <li><a href="contact.html" class="tab">CONTACT</a></li>
         </ul>
 
-        <!-- Menu Burger -->
         <input type="checkbox" id="menuToggle" />
         <label for="menuToggle" class="burger-icon" title="Menu">
           <img id="menuIcon" src="logos/menu.svg" alt="Menu">
         </label>
         
-        <!-- Overlay Menu Burger -->
         <div class="mobile-menu">
           <ul>
             <li><a href="faq/faq.html">FAQ</a></li>
@@ -211,29 +67,26 @@
     </div>
   </header>
 
-  <!-- Effet flou arrière-plan quand menu ouvert -->
   <div class="blur-overlay"></div>
 
-  <!-- ================= SECTION PRINCIPALE RECHERCHE ================= -->
+  <!-- Contenu Principal -->
   <main>
-    <section class="search-page">
-      <div class="search-container">
+    <section class="search-page-container">
+      <div class="search-box-wrapper">
         
-        <!-- BARRE DE RECHERCHE -->
+        <!-- Barre de recherche -->
         <div class="search-bubble">
           <img src="logos/rechercher.svg" alt="Loupe" class="search-logo">
-          <!-- L'ID searchInput est important pour le Javascript -->
           <input type="text" id="searchInput" placeholder="Cherchez une œuvre, un titre..." class="search-input" autocomplete="off" autofocus>
         </div>
 
-        <!-- LISTE DES RÉSULTATS (Vide par défaut, remplie par JS) -->
+        <!-- Liste des résultats -->
         <div id="searchResults"></div>
 
       </div>
     </section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
   <footer>
     <div class="social-icons">
       <a href="https://linktr.ee/perspikative" target="_blank" aria-label="Linktree">
@@ -254,60 +107,48 @@
     </div>
 
     <p>&copy; 2026 Perspikative. Tous droits réservés.</p>
-    <p>
-      <a href="mentions-legales.html" class="footer-link">Mentions légales</a> &bull; 
-      <a href="politique-de-confidentialite.html" class="footer-link">Confidentialité</a>
-    </p>
+    <p><a href="mentions-legales.html" class="footer-link">Mentions légales</a></p>
+    <p><a href="politique-de-confidentialite.html" class="footer-link">Politique de confidentialité</a></p>
   </footer>
 
-  <!-- ================= SCRIPT MOTEUR DE RECHERCHE ================= -->
+  <!-- Script Recherche -->
   <script>
-    // --- 1. Menu Mobile ---
-    const menuToggle = document.getElementById('menuToggle');
-    menuToggle.addEventListener('change', (e) => {
-      document.body.classList.toggle('menu-open', e.target.checked);
-    });
-
-    // --- 2. BASE DE DONNÉES DU SITE (À remplir !) ---
-    // Ajoute ici tes nouvelles pages ou créations manuellement
+    // --- 1. BASE DE DONNÉES (À COMPLÉTER) ---
     const siteContent = [
-      // Pages principales
-      { title: "Portfolio - Créations", category: "Galerie", url: "portfolio/creations.html", tags: "dessin peinture art couleur", img: "logos/portfolio.svg" },
-      { title: "Portfolio - Illustrations", category: "Galerie", url: "portfolio/illustrations.html", tags: "histoires digital personnages", img: "logos/portfolio.svg" },
-      { title: "Portfolio - Projets", category: "Projet", url: "portfolio/projets.html", tags: "bâtiments maquettes concept", img: "logos/portfolio.svg" },
-      { title: "À propos de moi", category: "Info", url: "a-propos.html", tags: "qui suis je bio autrice artiste", img: "logos/a-propos.svg" },
+      { title: "Créations", category: "Galerie", url: "portfolio/creations.html", tags: "dessin peinture art couleur", img: "logos/portfolio.svg" },
+      { title: "Illustrations", category: "Galerie", url: "portfolio/illustrations.html", tags: "histoires digital personnages", img: "logos/portfolio.svg" },
+      { title: "Projets", category: "Projet", url: "portfolio/projets.html", tags: "bâtiments maquettes concept", img: "logos/portfolio.svg" },
+      { title: "À propos", category: "Info", url: "a-propos.html", tags: "qui suis je bio autrice artiste", img: "logos/a-propos.svg" },
       { title: "Art Challenge", category: "Challenge", url: "art-challenge.html", tags: "défi concours thème dessin", img: "logos/fermer.svg" },
       { title: "Contact", category: "Contact", url: "contact.html", tags: "message email parler", img: "logos/contact.svg" },
+      { title: "FAQ", category: "Faq", url: "faq/faq.html", tags: "faq questions réponses", img: "logos/faq.svg" },
 
-      // Exemple d'oeuvres (Remplace avec tes vraies données si tu veux que ça pointe vers des ancres spécifiques)
-      { title: "The Lil Stork", category: "Oeuvre", url: "portfolio/illustrations.html", tags: "cigogne oiseau mignon encre", img: "" },
-      { title: "La Souris Lectrice", category: "Oeuvre", url: "portfolio/illustrations.html", tags: "souris livre bibliothèque", img: "" },
+      
+      // Tes oeuvres :
+      { title: "The Lil Stork", category: "Oeuvre", url: "portfolio/creations.html", tags: "cigogne oiseau mignon encre", img: "" },
       { title: "Tower Art", category: "Projet", url: "portfolio/projets.html", tags: "tour architecture dessin", img: "" }
     ];
 
-    // --- 3. LOGIQUE DE RECHERCHE ---
+    // --- 2. MOTEUR ---
     const searchInput = document.getElementById('searchInput');
     const resultsContainer = document.getElementById('searchResults');
 
     searchInput.addEventListener('input', function(e) {
       const query = e.target.value.toLowerCase().trim();
-      resultsContainer.innerHTML = ''; // Nettoyer
+      resultsContainer.innerHTML = ''; 
 
-      if (query.length < 2) return; // Ne cherche pas si moins de 2 lettres
+      if (query.length < 2) return; 
 
-      // Filtrer
       const results = siteContent.filter(item => {
         return item.title.toLowerCase().includes(query) || 
                item.tags.toLowerCase().includes(query) || 
                item.category.toLowerCase().includes(query);
       });
 
-      // Afficher
       if (results.length === 0) {
         resultsContainer.innerHTML = `<div style="color:white; text-align:center; opacity:0.7;">Aucun résultat pour "${e.target.value}"</div>`;
       } else {
         results.forEach(item => {
-          // Si pas d'image définie, utiliser une icône par défaut
           const imageSrc = item.img ? item.img : 'logos/rechercher.svg';
           
           const html = `
@@ -323,10 +164,14 @@
         });
       }
     });
-  </script>
-  
-  <!-- Script global (Paramètres, animations...) -->
-  <script src="script.js"></script>
 
+    // --- 3. MENU MOBILE ---
+    const menuToggle = document.getElementById('menuToggle');
+    menuToggle.addEventListener('change', (e) => {
+      document.body.classList.toggle('menu-open', e.target.checked);
+    });
+  </script>
+
+  <script src="script.js"></script>
 </body>
 </html>
