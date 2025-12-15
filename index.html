@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Menu</title>
+
+  <style>
+    :root {
+      --bg: #0f0f14;
+      --glass: rgba(255,255,255,0.08);
+      --glass-hover: rgba(255,255,255,0.14);
+      --text: #f4f4f5;
+      --muted: #a1a1aa;
+      --radius: 14px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 1.5rem;
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .menu-item {
+      position: relative;
+    }
+
+    .trigger {
+      cursor: pointer;
+      padding: 0.5rem 0.8rem;
+      border-radius: 10px;
+      transition: background 0.2s;
+      user-select: none;
+    }
+
+    .trigger:hover {
+      background: rgba(255,255,255,0.12);
+    }
+
+    .content {
+      position: absolute;
+      top: 120%;
+      left: 0;
+      min-width: 320px;
+      padding: 1rem;
+      border-radius: var(--radius);
+      background: var(--glass);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+      display: none;
+      z-index: 10;
+    }
+
+    .menu-item.open .content {
+      display: block;
+    }
+
+    .grid {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    a.card {
+      display: block;
+      padding: 0.75rem;
+      border-radius: 12px;
+      text-decoration: none;
+      color: var(--text);
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    a.card:hover {
+      background: var(--glass-hover);
+      transform: translateY(-2px);
+    }
+
+    .title {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .desc {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 0.25rem;
+      line-height: 1.3;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-wrap: wrap;
+      }
+
+      .content {
+        position: static;
+        margin-top: 0.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <div class="menu-item">
+    <div class="trigger">Home</div>
+    <div class="content">
+      <div class="grid">
+        <a href="/" class="card">
+          <div class="title">shadcn/ui</div>
+          <div class="desc">Beautifully designed components built with Tailwind CSS.</div>
+        </a>
+
+        <a href="/docs" class="card">
+          <div class="title">Introduction</div>
+          <div class="desc">Reusable components built using Radix UI.</div>
+        </a>
+
+        <a href="/docs/installation" class="card">
+          <div class="title">Installation</div>
+          <div class="desc">Install dependencies and structure your app.</div>
+        </a>
+
+        <a href="/docs/primitives/typography" class="card">
+          <div class="title">Typography</div>
+          <div class="desc">Headings, paragraphs, lists and more.</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="menu-item">
+    <div class="trigger">Components</div>
+    <div class="content">
+      <div class="grid two" id="components"></div>
+    </div>
+  </div>
+
+  <a href="/docs" class="trigger">Docs</a>
+</nav>
+
+<script>
+  const components = [
+    { title: "Alert Dialog", href: "/docs/primitives/alert-dialog", desc: "A modal dialog that interrupts the user." },
+    { title: "Hover Card", href: "/docs/primitives/hover-card", desc: "Preview content behind a link." },
+    { title: "Progress", href: "/docs/primitives/progress", desc: "Displays task completion progress." },
+    { title: "Scroll Area", href: "/docs/primitives/scroll-area", desc: "Separates content visually." },
+    { title: "Tabs", href: "/docs/primitives/tabs", desc: "Layered sections of content." },
+    { title: "Tooltip", href: "/docs/primitives/tooltip", desc: "Contextual popup information." }
+  ];
+
+  const container = document.getElementById("components");
+
+  components.forEach(item => {
+    const link = document.createElement("a");
+    link.href = item.href;
+    link.className = "card";
+    link.innerHTML = `
+      <div class="title">${item.title}</div>
+      <div class="desc">${item.desc}</div>
+    `;
+    container.appendChild(link);
+  });
+
+  document.querySelectorAll(".menu-item .trigger").forEach(trigger => {
+    trigger.addEventListener("click", () => {
+      const item = trigger.parentElement;
+      item.classList.toggle("open");
+    });
+  });
+</script>
+
+</body>
+  </html>
