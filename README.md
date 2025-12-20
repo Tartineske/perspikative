@@ -1,3 +1,3 @@
 # Perspikative
-This website is not available for the moment.
-Please visit www.linktr.ee/perspikative
+Official website of Perspikative.
+You can visit www.linktr.ee/perspikative
