@@ -409,4 +409,25 @@ document.querySelectorAll("img").forEach(img => {
   });
 });
 
+
+
+// ============================= 11. OUVRIR LES HASHS DE LA RECHERCHE POUR LES LIGHTBOXS =============================
+
+// Ouvrir automatiquement la lightbox si un hash est présent
+window.addEventListener('DOMContentLoaded', () => {
+  const hash = window.location.hash.substring(1); // enlève le #
+  if (!hash) return;
+
+  const targetImg = document.getElementById(hash);
+  if (targetImg) {
+    // Reutilise exactement la même logique que pour le clic
+    lightboxImg.src = targetImg.src;
+    lightboxTitle.textContent = targetImg.dataset.title || '';
+    lightboxDesc.innerHTML = targetImg.dataset.desc || '';
+
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+});
+
 // ============================= FIN DU SCRIPT =============================
