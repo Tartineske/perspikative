@@ -80,23 +80,75 @@
   <main class="creations">
     <h2>PROJETS</h2>
 
-      <section class="layout layout-3colonnes">
+    <section class="layout layout-3colonnes">
       <div class="col">
-        <img src="projets/2.webp" alt="Projet 2">
+        <img
+          id="art-tower"
+          class="prspk-thumb"
+          src="projets/2.webp"
+          alt="Projet 2"
+          data-title="ART TOWER"
+          data-desc="🎨 <strong>Teintes :</strong> Jaune, bleu, rouge et orange<br>
+                     ⌛️ <strong>Temps de travail :</strong> 2h30<br>
+                     ❇️ <strong>Particularités :</strong> Composition attrayante, photoshoot de qualité<br>
+                     💭 <strong>Imagination :</strong> 50% réfléchie • 40% improvisée • 10% d'Internet<br>
+                     💬 <strong>Commentaires :</strong><br>
+                     Paraît-il, que les oiseaux migrent pour l'hiver. Ils côtoient mille lieux, s'arrêtent, repartent. Une cigogne égarée alors s'arrêtait, au bord d'un étang, dans une
+                     forêt oubliée, tandis qu'une maison la regardait 🪶"
+        />
       </div>
 
       <div class="col">
-        <img src="projets/1.webp" alt="Projet 1">
+        <img
+          id="perspika-city"
+          class="prspk-thumb"
+          src="projets/1.webp"
+          alt="Projet 1"
+          data-title="PERSPIKA CITY"
+          data-desc="🎨 <strong>Teintes :</strong> Jaune, bleu, rouge et orange<br>
+                     ⌛️ <strong>Temps de travail :</strong> 2h30<br>
+                     ❇️ <strong>Particularités :</strong> Composition attrayante, photoshoot de qualité<br>
+                     💭 <strong>Imagination :</strong> 50% réfléchie • 40% improvisée • 10% d'Internet<br>
+                     💬 <strong>Commentaires :</strong><br>
+                     Paraît-il, que les oiseaux migrent pour l'hiver. Ils côtoient mille lieux, s'arrêtent, repartent. Une cigogne égarée alors s'arrêtait, au bord d'un étang, dans une
+                     forêt oubliée, tandis qu'une maison la regardait 🪶"
+        />
       </div>
     </section>
 
     <section class="layout layout-2colonnes">
       <div class="col">
-        <img src="projets/2.webp" alt="Projet 2">
+        <img
+          id="art-tower"
+          class="prspk-thumb"
+          src="projets/2.webp"
+          alt="Projet 2"
+          data-title="ART TOWER"
+          data-desc="🎨 <strong>Teintes :</strong> Jaune, bleu, rouge et orange<br>
+                     ⌛️ <strong>Temps de travail :</strong> 2h30<br>
+                     ❇️ <strong>Particularités :</strong> Composition attrayante, photoshoot de qualité<br>
+                     💭 <strong>Imagination :</strong> 50% réfléchie • 40% improvisée • 10% d'Internet<br>
+                     💬 <strong>Commentaires :</strong><br>
+                     Paraît-il, que les oiseaux migrent pour l'hiver. Ils côtoient mille lieux, s'arrêtent, repartent. Une cigogne égarée alors s'arrêtait, au bord d'un étang, dans une
+                     forêt oubliée, tandis qu'une maison la regardait 🪶"
+        />
       </div>
 
       <div class="col">
-        <img src="projets/1.webp" alt="Projet 1">
+        <img
+          id="perspika-city"
+          class="prspk-thumb"
+          src="projets/1.webp"
+          alt="Projet 1"
+          data-title="PERSPIKA CITY"
+          data-desc="🎨 <strong>Teintes :</strong> Jaune, bleu, rouge et orange<br>
+                     ⌛️ <strong>Temps de travail :</strong> 2h30<br>
+                     ❇️ <strong>Particularités :</strong> Composition attrayante, photoshoot de qualité<br>
+                     💭 <strong>Imagination :</strong> 50% réfléchie • 40% improvisée • 10% d'Internet<br>
+                     💬 <strong>Commentaires :</strong><br>
+                     Paraît-il, que les oiseaux migrent pour l'hiver. Ils côtoient mille lieux, s'arrêtent, repartent. Une cigogne égarée alors s'arrêtait, au bord d'un étang, dans une
+                     forêt oubliée, tandis qu'une maison la regardait 🪶"
+        />
       </div>
     </section>
   </main>
@@ -128,6 +180,67 @@
   <a href="../rechercher.html" class="search-float-btn" title="Rechercher">
     <img src="../logos/rechercher.svg" alt="Rechercher">
   </a>
+
+<!-- LIGHTBOX STRUCTURE -->
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">
+      <img src="../logos/fermer.svg" alt="Fermer">
+    </button>
+    <div class="lightbox-window">
+      <div class="lightbox-left">
+        <img id="lightbox-img" src="" alt="">
+      </div>
+      <div class="lightbox-right">
+        <h3 id="lightbox-title"></h3>
+        <p id="lightbox-desc"></p>
+        <div class="lightbox-extra-images" id="lightbox-extra"></div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+    // ----- LIGHTBOX -----
+const thumbs = document.querySelectorAll('.prspk-thumb');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const lightboxTitle = document.getElementById('lightbox-title');
+const lightboxDesc = document.getElementById('lightbox-desc');
+const lightboxExtra = document.getElementById('lightbox-extra');
+const closeBtn = document.getElementById('lightbox-close');
+
+thumbs.forEach(img => {
+  img.addEventListener('click', () => {
+    // Image principale
+    lightboxImg.src = img.src;
+
+    // Titre
+    lightboxTitle.textContent = img.dataset.title || '';
+
+    // Description avec HTML interprété (<br>, <strong>, etc.)
+    lightboxDesc.innerHTML = img.dataset.desc || '';
+
+    // Afficher la lightbox et bloquer le scroll
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+// Fermer avec le bouton
+closeBtn.addEventListener('click', () => {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+});
+
+// Fermer en cliquant sur le fond
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+});
+  </script>
+
 
   <script>
     const menuToggle = document.getElementById('menuToggle');
