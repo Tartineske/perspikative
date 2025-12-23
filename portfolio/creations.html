@@ -6,6 +6,10 @@
 
   <title>Créations</title>
 
+  <meta name="description" content="Explore les créations de Perspikative, des oeuvres qui respirent la créativité, mêlant architecture, perspective et fantastique." />
+  <meta name="keywords" content="créations, portfolio, œuvres artistiques, architecture, perspective, fantastique, dessins, Perspikative">
+  <meta name="robots" content="index, follow">
+
   <meta name="theme-color" content="#58b3a2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#344f4a" media="(prefers-color-scheme: dark)">
 
@@ -95,6 +99,7 @@
           src="creations/41.webp"
           alt="Création 41"
           data-title="THE LIL STORK"
+          data-date="30/11/25"
           data-desc="🎨 <strong>Teintes :</strong> Jaune, bleu, rouge et orange<br>
                      ⌛️ <strong>Temps de travail :</strong> 2h30<br>
                      ❇️ <strong>Particularités :</strong> Composition attrayante, photoshoot de qualité<br>
@@ -284,6 +289,7 @@
           class="prspk-thumb"
           src="creations/4.webp"
           alt="Création 4"
+          loading="lazy"
           data-title="NEW-YORK"
           data-desc="🎨 <strong>Teintes :</strong> Noir, jaune, brun, bleu et violet<br>
                      ⌛️ <strong>Temps de travail :</strong> 0h35<br>
@@ -477,6 +483,7 @@
           class="prspk-thumb"
           src="creations/3.webp"
           alt="Création 3"
+          loading="lazy"
           data-title="MAISON RETRO FUTURISTE"
           data-desc="🎨 <strong>Teintes :</strong> Vert, bleu, brun, mauve et rose<br>
                      ⌛️ <strong>Temps de travail :</strong> 1h20<br>
@@ -488,6 +495,7 @@
           class="prspk-thumb"
           src="creations/1.webp"
           alt="Création 1"
+          loading="lazy"
           data-title="MINECRAFT"
           data-desc="🎨 <strong>Teintes :</strong> Vert, gris, brun et violet<br>
                      ⌛️ <strong>Temps de travail :</strong> 2h<br>
@@ -667,6 +675,7 @@
           class="prspk-thumb"
           src="creations/5.webp"
           alt="Création 5"
+          loading="lazy"
           data-title="CANDY HOUSE"
           data-desc="🎨 <strong>Teintes :</strong> Rose, orange, brun, rouge, mauve, bleu, violet et vert<br>
                      ⌛️ <strong>Temps de travail :</strong> 1h<br>
@@ -680,6 +689,7 @@
           class="prspk-thumb"
           src="creations/2.webp"
           alt="Création 2"
+          loading="lazy"
           data-title="ABSTRAKT CITY"
           data-desc="🎨 <strong>Teintes :</strong> Orange, jaune, mauve, rose, violet et bleu<br>
                      ⌛️ <strong>Temps de travail :</strong> 0h40<br>
@@ -972,6 +982,7 @@
       </div>
       <div class="lightbox-right">
         <h3 id="lightbox-title"></h3>
+        <p id="lightbox-date" class="lightbox-date"></p>
         <p id="lightbox-desc"></p>
         <div class="lightbox-extra-images" id="lightbox-extra"></div>
       </div>
@@ -985,6 +996,7 @@ const thumbs = document.querySelectorAll('.prspk-thumb');
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const lightboxTitle = document.getElementById('lightbox-title');
+const lightboxDate = document.getElementById('lightbox-date');
 const lightboxDesc = document.getElementById('lightbox-desc');
 const lightboxExtra = document.getElementById('lightbox-extra');
 const closeBtn = document.getElementById('lightbox-close');
@@ -996,6 +1008,9 @@ thumbs.forEach(img => {
 
     // Titre
     lightboxTitle.textContent = img.dataset.title || '';
+
+    // Date
+    lightboxDate.textContent = img.dataset.date || '';
 
     // Description avec HTML interprété (<br>, <strong>, etc.)
     lightboxDesc.innerHTML = img.dataset.desc || '';
