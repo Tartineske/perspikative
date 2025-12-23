@@ -214,16 +214,16 @@ body {
   color: var(--text);
 }
 
-/* --- Police système pour les paragraphes (San Francisco sur Apple) --- */
 .system-font {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-weight: 400;
+  font-family: "Rubik", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  font-weight: 300; /* clé du changement */
   text-transform: none;
-  letter-spacing: 0;
-  line-height: 1.6;
+  letter-spacing: 0.015em;
+  line-height: 1.7;
   color: #222;
-  transition: font-weight 0.3s ease, text-shadow 0.3s ease, letter-spacing 0.3s ease;
+  transition: font-weight 0.3s ease, letter-spacing 0.3s ease;
 }
+
 
 /* Police contrastée - Contours noirs et texte plus gras */
 html.contrast-font .system-font,
@@ -402,7 +402,7 @@ header h1 {
   backdrop-filter: blur(15px) saturate(180%);
   -webkit-backdrop-filter: blur(15px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 10px rgba(255 255 255 / 0.2);
   color: white;
   font-weight: 700;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -580,10 +580,10 @@ body.menu-open .blur-overlay {
   backdrop-filter: blur(25px) saturate(180%);
   -webkit-backdrop-filter: blur(25px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   color: white;
   transition: background 0.3s ease, color 0.3s ease;
   text-decoration: none;
+  box-shadow: inset 0 0 10px rgba(255 255 255 / 0.2);
 }
 
 .mobile-menu ul li a:hover {
@@ -802,6 +802,7 @@ body.home {
 .cta-container h2 {
   font-family: 'Rubik', sans-serif;
   font-size: 2rem;
+  font-weight: 700;
   color: #fff;
   margin-bottom: 15px;
 }
@@ -868,7 +869,7 @@ body.home {
     transform: translateX(-50%);
     padding: 15px 10px; /* un peu moins de padding latéral pour éviter le débord */
   }
-}
+
 
 
 
@@ -1009,7 +1010,7 @@ body.home {
   }
 
   main.portfolio-page {
-    padding-left: 0px; important!
+    padding-left: 0px !important;
     padding-right: 0px;
     padding-top: 0px;
     padding-bottom: 0px;
@@ -1260,7 +1261,7 @@ main.creations h2 {
   justify-content: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   z-index: 9999;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  box-shadow: inset 0 0 10px rgba(255 255 255 / 0.2);
 }
 
 .search-float-btn img {
@@ -1779,7 +1780,6 @@ FAQ 2222222222222222222222222222222222222222222222222
 /* ====== FAQ Page Styles ====== */
 .faq-page {
   max-width: 900px;
-  margin: 0 auto;
   padding: 2rem;
   display: flex;
   flex-direction: column;
@@ -1958,10 +1958,9 @@ FAQ 2222222222222222222222222222222222222222222222222
 }
 
 .count-item .label {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
-               "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 1rem;
-  font-weight: 500;
+  font-family: "Rubik", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
   letter-spacing: 0.5px;     /* joli avec cette police */
   margin-bottom: 6px;        /* espace entre texte et la bulle */
   display: block;
@@ -2105,9 +2104,9 @@ FAQ 2222222222222222222222222222222222222222222222222
 
 /* Label à droite, police des paragraphes */
 .setting label {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-weight: 600;
-  font-size: 1rem;
+  font-family: "Rubik", Arial, sans-serif;
+  font-weight: 300;
+  font-size: 1.1rem;
   color: #fff;
   user-select: none;
 }
@@ -2118,7 +2117,7 @@ main.settings-section {
     padding-top: 50px;
     padding-bottom: 0px;
   }
-}
+
 
 
 /* --- Responsive --- */
@@ -2329,7 +2328,7 @@ footer {
   font-size: 0.9rem;
   border-radius: 20px 20px 0 0;
   border: 1px solid rgba(255 255 255 / 0.25);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: "Rubik", Arial, sans-serif;
   font-weight: 500;
 }
 
@@ -2340,9 +2339,9 @@ footer p {
 
 footer a.footer-link {
   position: relative;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* Même police que les paragraphes */
-  font-weight: 700; /* Gras */
-  color: #56DB85; /* Couleur douce pour contraster */
+  font-family: "Rubik", Arial, sans-serif; /* Même police que les paragraphes */
+  font-weight: 510;
+  color: #a9e8bf; /* Couleur douce pour contraster */
   text-decoration: none;
   padding: 2px 6px;
   border-radius: 10px;
