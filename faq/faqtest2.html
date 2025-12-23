@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ - Portfolio de Dessins</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #2c5364);
+      margin: 0;
+      padding: 40px;
+      color: #e0f7fa;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #a7ffeb;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+
+    .faq-container {
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .faq-question {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 15px 20px;
+      cursor: pointer;
+      position: relative;
+      font-weight: bold;
+      color: #a7ffeb;
+      margin-bottom: 5px;
+    }
+
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 20px;
+      font-size: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-question::after {
+      content: '-';
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      margin-left: 15px;
+      border-left: 3px solid #26a69a;
+      padding: 0 15px;
+      color: #e0f7fa;
+      transition: max-height 0.6s ease, opacity 0.6s ease, padding 0.3s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 300px;
+      opacity: 1;
+      padding: 10px 15px;
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+  <h1>FAQ - Portfolio de Dessins</h1>
+  <div class="faq-container">
+    <div class="faq-item">
+      <div class="faq-question">Quels types de dessins réalises-tu ?</div>
+      <div class="faq-answer">
+        Je réalise principalement des portraits, des illustrations numériques et des croquis traditionnels au crayon.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Peut-on commander un dessin personnalisé ?</div>
+      <div class="faq-answer">
+        Oui, je propose des commandes personnalisées. Vous pouvez me contacter via la section "Contact" du portfolio.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Quels outils utilises-tu pour tes créations ?</div>
+      <div class="faq-answer">
+        J’utilise des logiciels comme Photoshop et Procreate, ainsi que des techniques traditionnelles avec papier et crayon.
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">Est-ce possible d’acheter des impressions de tes dessins ?</div>
+      <div class="faq-answer">
+        Oui, certaines œuvres sont disponibles en impression. Consultez la section "Boutique" pour plus d’informations.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach(item => {
+      item.querySelector('.faq-question').addEventListener('click', () => {
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+</body>
+</html>
+
