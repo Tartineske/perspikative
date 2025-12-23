@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>ART Challenge</title>
+
+  <meta name="description" content="Le ART Challenge est un concours d'art visuel ouvert à tous, participez et exprimez votre créativité autour de thèmes variés !" />
+  <meta name="keywords" content="art challenge, défi artistique, créativité, art visuel, expérimentation artistique, thème, Perspikative">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="ART Challenge | Perspikative" />
+  <meta property="og:description" content="✏️ make art. welcome to your world" />
+  <meta property="og:image" content="https://tartineske.github.io/perspikative/preview.jpg" />
+  <meta property="og:url" content="https://tartineske.github.io/perspikative/" />
+  <meta property="og:type" content="website" />
+
+  <meta name="theme-color" content="#58b3a2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#344f4a" media="(prefers-color-scheme: dark)">
+
+  <link rel="icon" type="image/png" href="favicon-light.png" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="favicon-dark.png" media="(prefers-color-scheme: light)">
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet" />
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MH68ZWLYM8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MH68ZWLYM8');
+</script>
+
+<body class="art-challenge">
+
+  <nav class="mobile-nav">
+    <a href="index.html" class="nav-icon" title="Accueil">
+      <img src="logos/accueil.svg" alt="Accueil">
+    </a>
+    <a href="portfolio.html" class="nav-icon" title="Portfolio">
+      <img src="logos/portfolio.svg" alt="Portfolio">
+    </a>
+    <a href="rechercher.html" class="nav-icon" title="Rechercher">
+      <img src="logos/rechercher.svg" alt="Rechercher">
+    </a>
+    <a href="blog.html" class="nav-icon" title="Blog">
+      <img src="logos/blog.svg" alt="Blog">
+    </a>
+    <a href="contact.html" class="nav-icon" title="Contact">
+      <img src="logos/contact.svg" alt="Contact">
+    </a>
+  </nav>
+
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <img src="logo.svg" alt="Perspikative logo">
+      </div>
+
+      <div class="nav-right">
+        <ul class="nav-tabs">
+          <li><a href="index.html" class="tab">ACCUEIL</a></li>
+          <li><a href="portfolio.html" class="tab">PORTFOLIO</a></li>
+          <li><a href="blog.html" class="tab">BLOG</a></li>
+          <li><a href="contact.html" class="tab">CONTACT</a></li>
+        </ul>
+
+        <input type="checkbox" id="menuToggle" />
+        <label for="menuToggle" class="burger-icon" title="Menu">
+          <img id="menuIcon" src="logos/menu.svg" alt="Menu">
+        </label>
+      <div class="mobile-menu">
+        <ul>
+          <li><a href="faq/faq.html">FAQ</a></li>
+          <li><a href="art-challenge.html">ART CHALLENGE</a></li>
+          <li><a href="parametres.html">PARAMÈTRES</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="blur-overlay"></div>
+
+  <main class="art-challenge">
+    <section class="logo-section">
+      <img src="logos/art-challenge-logo.svg" alt="Art Challenge Logo" class="logo-animated">
+      <h1>MAKE ART. WELCOME TO YOUR WORLD.</h1>
+    </section>
+
+    <section class="intro">
+      <p>Le ART Challenge est un concours organisé par Perspikative</p>
+      <p>À chaque nouvelle édition, un nouveau thème est imposé.</p>
+      <p>Que tu sois dessinateur, graphiste, peintre ou amateur créatif, ce concours est ouvert à tous !</p>
+    </section>
+
+    <section class="art-challenge">
+      <div class="theme-bubble">
+        <div class="left">
+          <h2>Thème du moment :</h2>
+          <span>Thème libre</span>
+          <p>Formats acceptés : JPG, JPEG, PNG, GIF</p>
+          <p>Contraintes : Aucune</p>
+        </div>
+
+        <div class="right">
+          <p class="deadline">Date limite : 10 février 2026 à minuit</p>
+          <div class="countdown">
+            <div class="count-item">
+              <span class="label">Jours</span>
+              <div class="count-bubble" id="days">0</div>
+            </div>
+            <div class="count-item">
+              <span class="label">Heures</span>
+              <div class="count-bubble" id="hours">0</div>
+            </div>
+            <div class="count-item">
+              <span class="label">Minutes</span>
+              <div class="count-bubble" id="minutes">0</div>
+            </div>
+            <div class="count-item">
+              <span class="label">Secondes</span>
+              <div class="count-bubble" id="seconds">0</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<script>
+function updateCountdown() {
+  const deadline = new Date("February 10, 2026 00:00:00").getTime();
+  const now = new Date().getTime();
+  const distance = deadline - now;
+
+  const days = Math.max(Math.floor(distance / (1000*60*60*24)), 0);
+  const hours = Math.max(Math.floor((distance % (1000*60*60*24)) / (1000*60*60)), 0);
+  const minutes = Math.max(Math.floor((distance % (1000*60*60)) / (1000*60)), 0);
+  const seconds = Math.max(Math.floor((distance % (1000*60)) / 1000), 0);
+
+  document.getElementById("days").innerText = days;
+  document.getElementById("hours").innerText = hours;
+  document.getElementById("minutes").innerText = minutes;
+  document.getElementById("seconds").innerText = seconds;
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+</script>
+
+  </main>
+
+  <footer>
+    <div class="social-icons">
+      <a href="https://linktr.ee/perspikative" target="_blank" aria-label="Linktree">
+        <img src="logos/linktree.svg" alt="Linktree">
+      </a>
+     <a href="https://www.whatsapp.com/channel/0029VaKP3Kd5Ui2gky1r5m3y" target="_blank" aria-label="Chaîne WhatsApp">
+        <img src="logos/whatsapp-channel.svg" alt="Chaîne WhatsApp">
+      </a>
+      <a href="https://www.instagram.com/perspikative" target="_blank" aria-label="Instagram">
+        <img src="logos/instagram.svg" alt="Instagram">
+      </a>
+      <a href="https://youtube.com/@perspikative" target="_blank" aria-label="YouTube">
+        <img src="logos/youtube.svg" alt="YouTube">
+      </a>
+      <a href="https://www.pinterest.com/perspikative" target="_blank" aria-label="Pinterest">
+        <img src="logos/pinterest.svg" alt="Pinterest">
+      </a>
+    </div>
+
+    <p>&copy; 2026 Perspikative. Tous droits réservés.</p>
+    <p><a href="mentions-legales.html" class="footer-link">Mentions légales</a></p>
+    <p><a href="politique-de-confidentialite.html" class="footer-link">Politique de confidentialité</a></p>
+  </footer>
+
+  <a href="rechercher.html" class="search-float-btn" title="Rechercher">
+    <img src="logos/rechercher.svg" alt="Rechercher">
+  </a>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    menuToggle.addEventListener('change', (e) => {
+      document.body.classList.toggle('menu-open', e.target.checked);
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>

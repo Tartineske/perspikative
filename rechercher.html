@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Rechercher</title>
+
+  <meta name="description" content="Recherche et explore facilement ce que tu veux dans l'univers de Perspikative.">
+  <meta name="keywords" content="recherche artistique, explorer portfolio, moteur de recherche art, créations, illustrations, projets, Perspikative">
+  <meta name="robots" content="noindex, follow">
+
+  <meta name="theme-color" content="#58b3a2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#344f4a" media="(prefers-color-scheme: dark)">
+
+  <link rel="icon" type="image/png" href="favicon-light.png" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="favicon-dark.png" media="(prefers-color-scheme: light)">
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-MH68ZWLYM8"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-MH68ZWLYM8');
+</script>
+
+<body class="search">
+
+  <nav class="mobile-nav">
+    <a href="index.html" class="nav-icon" title="Accueil">
+      <img src="logos/accueil.svg" alt="Accueil">
+    </a>
+    <a href="portfolio.html" class="nav-icon" title="Portfolio">
+      <img src="logos/portfolio.svg" alt="Portfolio">
+    </a>
+    <a href="rechercher.html" class="nav-icon active" title="Rechercher">
+      <img src="logos/rechercher-active.svg" alt="Rechercher">
+    </a>
+    <a href="blog.html" class="nav-icon" title="Blog">
+      <img src="logos/blog.svg" alt="Blog">
+    </a>
+    <a href="contact.html" class="nav-icon" title="Contact">
+      <img src="logos/contact.svg" alt="Contact">
+    </a>
+  </nav>
+
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <a href="index.html"><img src="logo.svg" alt="Perspikative logo"></a>
+      </div>
+      <div class="nav-right">
+        <ul class="nav-tabs">
+          <li><a href="index.html" class="tab">ACCUEIL</a></li>
+          <li><a href="portfolio.html" class="tab">PORTFOLIO</a></li>
+          <li><a href="blog.html" class="tab">BLOG</a></li>
+          <li><a href="contact.html" class="tab">CONTACT</a></li>
+        </ul>
+
+        <input type="checkbox" id="menuToggle" />
+        <label for="menuToggle" class="burger-icon" title="Menu">
+          <img id="menuIcon" src="logos/menu.svg" alt="Menu">
+        </label>
+        
+        <div class="mobile-menu">
+          <ul>
+            <li><a href="faq/faq.html">FAQ</a></li>
+            <li><a href="art-challenge.html">ART CHALLENGE</a></li>
+            <li><a href="parametres.html">PARAMÈTRES</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="blur-overlay"></div>
+
+  <section class="search-page-container">
+    <div class="search-box-wrapper">
+        
+      <div class="search-bubble">
+        <img src="logos/rechercher.svg" alt="Loupe" class="search-logo">
+        <input type="text" id="searchInput" placeholder="Rechercher..." class="search-input" autocomplete="off" autofocus>
+      </div>
+
+      <div id="searchResults"></div>
+
+    </div>
+  </section>
+
+  <footer>
+    <div class="social-icons">
+      <a href="https://linktr.ee/perspikative" target="_blank" aria-label="Linktree">
+        <img src="logos/linktree.svg" alt="Linktree">
+      </a>
+      <a href="https://www.whatsapp.com/channel/0029VaKP3Kd5Ui2gky1r5m3y" target="_blank" aria-label="Chaîne WhatsApp">
+        <img src="logos/whatsapp-channel.svg" alt="Chaîne WhatsApp">
+      </a>
+      <a href="https://www.instagram.com/perspikative" target="_blank" aria-label="Instagram">
+        <img src="logos/instagram.svg" alt="Instagram">
+      </a>
+      <a href="https://youtube.com/@perspikative" target="_blank" aria-label="YouTube">
+        <img src="logos/youtube.svg" alt="YouTube">
+      </a>
+      <a href="https://www.pinterest.com/perspikative" target="_blank" aria-label="Pinterest">
+        <img src="logos/pinterest.svg" alt="Pinterest">
+      </a>
+    </div>
+
+    <p>&copy; 2026 Perspikative. Tous droits réservés.</p>
+    <p><a href="mentions-legales.html" class="footer-link">Mentions légales</a></p>
+    <p><a href="politique-de-confidentialite.html" class="footer-link">Politique de confidentialité</a></p>
+  </footer>
+
+  <script>
+    // --- 1. BASE DE DONNÉES ---
+    const siteContent = [
+      { title: "Portfolio", category: "Portfolio", url: "portfolio/creations.html", tags: "créations dessin peinture art couleur traditionnel", img: "logos/portfolio.svg" },
+      { title: "Créations", category: "Portfolio", url: "portfolio/creations.html", tags: "créations dessin peinture art couleur traditionnel", img: "logos/creations.svg" },
+      { title: "Illustrations", category: "Portfolio", url: "portfolio/illustrations.html", tags: "illustrations dessin digital", img: "logos/illustrations.svg" },
+      { title: "Projets", category: "Portfolio", url: "portfolio/projets.html", tags: "projets dessin concept traditionnel", img: "logos/projets.svg" },
+      { title: "Art Challenge", category: "Challenge", url: "art-challenge.html", tags: "art challenge défi concours thème dessin", img: "logos/art-challenge.svg" },
+      { title: "Contact", category: "Contact", url: "contact.html", tags: "contact message email", img: "logos/contact.svg" },
+      { title: "FAQ", category: "FAQ", url: "faq/faq.html", tags: "FAQ questions réponses", img: "logos/faq.svg" },
+      { title: "Paramètres", category: "Paramètres", url: "parametres.html", tags: "paramètres réglages", img: "logos/general.svg" },
+      { title: "Mentions légales", category: "Légal", url: "mentios-legales.html", tags: "mention légales", img: "logos/mentions-legales.svg" },
+      { title: "Politique de confidentialité", category: "Légal", url: "politique-de-confidentialite.html", tags: "politique de confidentialité", img: "logos/politique-de-confidentialite.svg" },
+
+
+      { title: "FAQ - Général", category: "FAQ", url: "faq/general/general.html", tags: "FAQ général", img: "logos/general.svg" },
+      { title: "FAQ - Portfolio", category: "FAQ", url: "faq/portfolio/portfolio.html", tags: "FAQ portfolio", img: "logos/portfolio.svg" },
+      { title: "FAQ - Contact", category: "FAQ", url: "faq/contact/contact.html", tags: "FAQ contact", img: "logos/contact.svg" },
+      { title: "FAQ - Confidentialié", category: "FAQ", url: "faq/confidentialite/confidentialite.html", tags: "FAQ confidentialité", img: "logos/confidentialite.svg" },
+      { title: "FAQ - Blog", category: "FAQ", url: "faq/blog/blog.html", tags: "FAQ blog", img: "logos/blog.svg" },
+      { title: "FAQ - Fonctionnalités", category: "FAQ", url: "faq/fonctionnalites/fonctionnalites.html", tags: "FAQ fonctionnalités", img: "logos/fonctionnalites.svg" },
+
+
+      { title: "YouTube", category: "Réseaux sociaux", url: "https://youtube.com/@perspikative", tags: "YouTube vidéo", img: "logos/youtube.svg" },
+      { title: "Instagram", category: "Réseaux sociaux", url: "https://instagram.com/perspikative", tags: "Instagram", img: "logos/instagram.svg" },
+      { title: "Linktree", category: "Réseaux sociaux", url: "https://linktr.ee/perspikative", tags: "Linktree liens", img: "logos/linktree.svg" },
+      { title: "WhatsApp", category: "Réseaux sociaux", url: "https://www.whatsapp.com/channel/0029VaKP3Kd5Ui2gky1r5m3y", tags: "WhatsApp", img: "logos/whatsapp-channel.svg" },
+      { title: "Pinterest", category: "Réseaux sociaux", url: "https://pinterest.com/perspikative", tags: "Pinterest", img: "logos/pinterest.svg" },
+
+      
+      { title: "The Lil Stork", category: "Œuvre", url: "portfolio/creations.html#the-lil-stork", tags: "cigogne oiseau étang forêt", img: "logos/creations.svg" },
+      { title: "The Cozy House of the field mouse", category: "Œuvre", url: "portfolio/creations.html#the-cozy-house-of-the-field-mouse", tags: "souris cozy", img: "logos/creations.svg" },
+      { title: "A Wanderer in Ginger Wood", category: "Œuvre", url: "portfolio/creations.html#a-wanderer-in-ginger-wood", tags: "valise forêt automne fille bois rousse", img: "logos/creations.svg" },
+      { title: "The Old, Old Lighthouse", category: "Œuvre", url: "portfolio/creations.html#the-old-old-lighthouse", tags: "phare nuages", img: "logos/creations.svg" },
+      { title: "The IA Home", category: "Œuvre", url: "portfolio/creations.html#the-ia-home", tags: "ia intelligence artificielle code erreur bocal cerveau", img: "logos/creations.svg" },
+      { title: "Creative Thoughts", category: "Œuvre", url: "portfolio/creations.html#creative-thoughts", tags: "collage pensées sketchbook", img: "logos/creations.svg" },
+      { title: "The Blue Bakery", category: "Œuvre", url: "portfolio/creations.html#the-blue-bakery", tags: "boulangerie bleu", img: "logos/creations.svg" },
+      { title: "Meeting in the Valley", category: "Œuvre", url: "portfolio/creations.html#meeting-in-the-valley", tags: "vallée ville éclairage lumière", img: "logos/creations.svg" },
+      { title: "The Moon Meadows Stable", category: "Œuvre", url: "portfolio/creations.html#the-moon-meadows-stable", tags: "étable tournage caméra scène cheval équestre", img: "logos/creations.svg" },
+      { title: "POP-BOX flowers", category: "Œuvre", url: "portfolio/creations.html#pop-box-flowers", tags: "bouquet fleur pop corn", img: "logos/creations.svg" },
+      { title: "Once upon a dream", category: "Œuvre", url: "portfolio/creations.html#once-upon-a-dream", tags: "rêve nuit", img: "logos/creations.svg" },
+      { title: "Birkskov", category: "Œuvre", url: "portfolio/creations.html#birkskov", tags: "forêt bouleau neige", img: "logos/creations.svg" },
+      { title: "Heading for the Door", category: "Œuvre", url: "portfolio/creations.html#heading-for-the-door", tags: "porte 2025 nouvel an fête feu d'artifice", img: "logos/creations.svg" },
+      { title: "Winter Lights", category: "Œuvre", url: "portfolio/creations.html#winter-lights", tags: "hiver noel guirlande neige", img: "logos/creations.svg" },
+      { title: "Le Palais des Rêves", category: "Œuvre", url: "portfolio/creations.html#le-palais-des-reves", tags: "palais boules", img: "logos/creations.svg" },
+      { title: "the bird house", category: "Œuvre", url: "portfolio/creations.html#the-bird-house", tags: "maison oiseau automne arbres", img: "logos/creations.svg" },
+      { title: "Airplane", category: "Œuvre", url: "portfolio/creations.html#airplane", tags: "avion nuages rose collab collaboration", img: "logos/creations.svg" },
+      { title: "L'auberge", category: "Œuvre", url: "portfolio/creations.html#l-auberge", tags: "maison ciel rêve", img: "logos/creations.svg" },
+      { title: "My Music Art", category: "Œuvre", url: "portfolio/creations.html#my-music-art", tags: "musique note artiste chanson", img: "logos/creations.svg" },
+      { title: "La Cité des Bulles", category: "Œuvre", url: "portfolio/creations.html#la-cite-des-bulles", tags: "ville bleu bulle bubullien", img: "logos/creations.svg" },
+      { title: "Là-Haut", category: "Œuvre", url: "portfolio/creations.html#la-haut", tags: "maison vole ballon disney pixar ciel", img: "logos/creations.svg" },
+      { title: "Architecture", category: "Œuvre", url: "portfolio/creations.html#architecture", tags: "maison ville europe", img: "logos/creations.svg" },
+      { title: "Japon", category: "Œuvre", url: "portfolio/creations.html#japon", tags: "maison vole ballon disney pixar ciel", img: "logos/creations.svg" },
+      { title: "Vegetal Desert", category: "Œuvre", url: "portfolio/creations.html#vegetal-desert", tags: "désert végétal serre sahara afrique", img: "logos/creations.svg" },
+      { title: "Red Fashion", category: "Œuvre", url: "portfolio/creations.html#red-fashion", tags: "rouge bonhomme bonshommes noir peinture", img: "logos/creations.svg" },
+      { title: "Le Café Enchanté", category: "Œuvre", url: "portfolio/creations.html#le-cafe-enchante", tags: "cafe fantastique", img: "logos/creations.svg" },
+      { title: "The Dragon Kingdom", category: "Œuvre", url: "portfolio/creations.html#the-dragon-kingdom", tags: "royaume dragon", img: "logos/creations.svg" },
+      { title: "Espace Côtier avec un ciel paranormal", category: "Œuvre", url: "portfolio/creations.html#espace-cotier-avec-un-ciel-paranormal", tags: "rose mer côte", img: "logos/creations.svg" },
+      { title: "Little Cottage", category: "Œuvre", url: "portfolio/creations.html#little-cottage", tags: "maison noir et blanc", img: "logos/creations.svg" },
+      { title: "Route 66, USA", category: "Œuvre", url: "portfolio/creations.html#route-66-usa", tags: "route panneau états-unis", img: "logos/creations.svg" },
+      { title: "Welcome in the house", category: "Œuvre", url: "portfolio/creations.html#welcome-in-the-house", tags: "maison salon isométrie isométrique", img: "logos/creations.svg" },
+      { title: "Alfaborg, la cité des fées", category: "Œuvre", url: "portfolio/creations.html#alfaborg-la-cite-des-fees", tags: "fées arbre islande", img: "logos/creations.svg" },
+      { title: "Hollande, Pays-Bas", category: "Œuvre", url: "portfolio/creations.html#hollande-pays-bas", tags: "moulin levé soleil", img: "logos/creations.svg" },
+      { title: "Circuit de karting", category: "Œuvre", url: "portfolio/creations.html#circuit-de-karting", tags: "voiture kart pneu", img: "logos/creations.svg" },
+      { title: "Cartoon World", category: "Œuvre", url: "portfolio/creations.html#cartoon-world", tags: "cabane arbre", img: "logos/creations.svg" },
+      { title: "Candy House", category: "Projet", url: "portfolio/projets.html#candy-house", tags: "maison bonbon nuage", img: "logos/projets.svg" },
+      { title: "New-York", category: "Œuvre", url: "portfolio/creations.html#new-york", tags: "ville building skyscraper gratte-ciel", img: "logos/creations.svg" },
+      { title: "Maison retro futuriste", category: "Œuvre", url: "portfolio/creations.html#maison-retro-futuriste", tags: "cabane", img: "logos/creations.svg" },
+      { title: "Abstrakt City", category: "Œuvre", url: "portfolio/creations.html#abstrakt-city", tags: "ville", img: "logos/creations.svg" },
+      { title: "Minecraft", category: "Œuvre", url: "portfolio/creations.html#minecraft", tags: "bloc isométrique jeu vidéo", img: "logos/creations.svg" },
+
+
+      { title: "ART Tower", category: "Projet", url: "portfolio/projets.html#art-tower", tags: "tour architecture collab collaboration métier art", img: "logos/projets.svg" },
+      { title: "Perspika City", category: "Projet", url: "portfolio/projets.html#perspika-city", tags: "ile volante collab collaboration", img: "logos/projets.svg" },
+    ];
+
+    // --- 2. MOTEUR ---
+    const searchInput = document.getElementById('searchInput');
+    const resultsContainer = document.getElementById('searchResults');
+
+    searchInput.addEventListener('input', function(e) {
+      const query = e.target.value.toLowerCase().trim();
+      resultsContainer.innerHTML = ''; 
+
+      if (query.length < 2) return; 
+
+      const results = siteContent.filter(item => {
+        return item.title.toLowerCase().includes(query) || 
+               item.tags.toLowerCase().includes(query) || 
+               item.category.toLowerCase().includes(query);
+      });
+
+      if (results.length === 0) {
+        resultsContainer.innerHTML = `<div style="color:white; text-align:center; opacity:0.7;">Aucun résultat pour "${e.target.value}"</div>`;
+      } else {
+        results.forEach(item => {
+          const imageSrc = item.img ? item.img : 'logos/rechercher.svg';
+          
+          const html = `
+            <a href="${item.url}" class="result-item">
+              <img src="${imageSrc}" alt="miniature" class="result-thumb">
+              <div class="result-info">
+                <h3>${item.title} <span class="badge-cat">${item.category}</span></h3>
+                <p>Mots-clés : ${item.tags.substring(0, 40)}...</p>
+              </div>
+            </a>
+          `;
+          resultsContainer.innerHTML += html;
+        });
+      }
+    });
+
+    // --- 3. MENU MOBILE ---
+    const menuToggle = document.getElementById('menuToggle');
+    menuToggle.addEventListener('change', (e) => {
+      document.body.classList.toggle('menu-open', e.target.checked);
+    });
+  </script>
+
+  <script src="script.js"></script>
+</body>
+</html>
