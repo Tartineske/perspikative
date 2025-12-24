@@ -1175,14 +1175,17 @@ main.creations h2 {
 
 .lightbox-right h3 {
   font-family: 'Maneola', 'Rubik';
-  margin-top: 0;
-  font-size: 2.8rem;
+  margin-top: 10px;
+  margin-bottom: 0%;
+  font-size: 2.9rem;
   font-weight: 550;
   letter-spacing: 0.05rem;
+  line-height: 0.85;
 }
 
 .lightbox-right p {
-  font-family: -apple-system, BlinkMacSystemFont, "San Francisco", sans-serif;
+  font-family: "Rubik", sans-serif;
+  font-weight: 100;
   font-size: 0.95rem;
   line-height: 1.5;
   margin-top: 10px;
@@ -1190,6 +1193,16 @@ main.creations h2 {
 
 .lightbox-right p strong {
   font-weight: 700;
+}
+
+.lightbox-date {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 300;
+  font-size: 1rem;
+  color: #fff;
+  opacity: 0.8;
+  margin: 0;
+  margin-bottom: 15px;
 }
 
 .lightbox-close {
@@ -1218,12 +1231,12 @@ main.creations h2 {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
-    padding: 15px 10px; /* padding plus adapté pour mobile */
-    gap: 15px; /* espace entre image et texte */
+    padding: 10px 15px; /* padding plus adapté pour mobile */
+    gap: 8px; /* espace entre image et texte */
   }
 
   .lightbox-left img {
-    max-width: 90%; /* image plus large mais pas full */
+    max-width: 100%; /* image plus large mais pas full */
     height: auto;
   }
 
@@ -1234,19 +1247,22 @@ main.creations h2 {
   }
 
   .lightbox-right h3 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    text-align: center;
   }
 
   .lightbox-right p {
-    font-size: 1rem; /* texte un peu plus lisible */
+    font-size: 1.1rem; /* texte un peu plus lisible */
   }
 
   .lightbox-close {
     top: 20px;
     right: 25px;
-    background: rgba(0,0,0,0.6);
-    width: 40px;
-    height: 40px;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
     font-size: 2.2rem;
   }
 }
