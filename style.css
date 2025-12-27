@@ -2316,10 +2316,10 @@ main.settings-section {
   text-decoration: none;
   background: rgba(255,255,255,0.12);
   padding: 10px 10px;
-  box-shadow: 0 0 20px rgba(44,168,119,0.7);
   border-radius: 50%;
   border: 1px solid rgba(255 255 255 / 0.2);
   transition: background 0.3s;
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
 }
 
 .mentions-content .back-home:hover {
@@ -2341,7 +2341,7 @@ main.settings-section {
     text-decoration: none;
     background: rgba(255,255,255,0.12);
     padding: 9px 9px;
-    box-shadow: 0 0 20px rgba(44,168,119,0.7);
+    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     border: 1px solid rgba(255 255 255 / 0.2);
     transition: background 0.3s;
