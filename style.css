@@ -1071,7 +1071,7 @@ main.creations h2 {
   font-size: 2.4rem;
   margin-bottom: 35px;
   color: #fff;
-  letter-spacing: 0px;
+  letter-spacing: -1px;
   text-align: center;
 }
 
@@ -1210,10 +1210,10 @@ main.creations h2 {
   font-family: 'Maneola', 'Rubik';
   margin-top: 10px;
   margin-bottom: 0%;
-  font-size: 2.9rem;
+  font-size: 3.5rem;
   font-weight: 550;
   letter-spacing: 0.05rem;
-  line-height: 0.85;
+  line-height: 1;
 }
 
 .lightbox-right p {
@@ -1221,7 +1221,7 @@ main.creations h2 {
   font-weight: 100;
   font-size: 0.95rem;
   line-height: 1.5;
-  margin-top: 10px;
+  margin-top: 3px;
 }
 
 .lightbox-right p strong {
@@ -1588,135 +1588,6 @@ main.creations h2 {
 
 
 
-/* ============================= 9. À PROPOS ============================= */
-
-#about h2 {
-  text-align: left;
-  font-size: 2.4rem;
-  font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
-/* Timeline container */
-.timeline {
-  position: relative;
-  width: 80%;
-  margin: 50px auto;
-  padding: 50px 0;
-}
-
-/* Ligne verticale */
-.timeline-line {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-  width: 6px;
-  height: 100%;
-  background: rgba(255,255,255,0.2);
-  backdrop-filter: blur(10px);
-  border-radius: 3px;
-}
-
-/* Événement */
-.event {
-  position: relative;
-  width: 50%;
-  margin: 50px 0;
-}
-
-/* Bulles */
-.bubble {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-  padding: 20px;
-  border-radius: 20px;
-  position: relative;
-  opacity: 0;
-  transform: translateX(50px);
-  transition: all 0.6s ease;
-}
-
-/* Flèche */
-.bubble::after {
-  content: '';
-  position: absolute;
-  top: 20px;
-  width: 20px;
-  height: 20px;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-  transform: rotate(45deg);
-}
-
-/* Bulles gauche */
-.left {
-  left: -100%;
-}
-.left::after {
-  right: -10px;
-}
-
-/* Bulles droite */
-.right {
-  left: 100%;
-}
-.right::after {
-  left: -10px;
-}
-
-/* Points */
-.point {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 16px;
-  height: 16px;
-  background: rgba(255,255,255,0.3);
-  border-radius: 50%;
-}
-
-/* Apparition au hover */
-.event:hover .bubble {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Texte */
-.date {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 700;
-  display: block;
-  margin-bottom: 10px;
-  color: #fff;
-}
-p {
-  color: #eee;
-  font-family: system-ui, sans-serif;
-  margin: 0;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .timeline-line {
-    left: 20px;
-  }
-  .event {
-    width: 100%;
-    margin-left: 40px;
-  }
-  .bubble {
-    left: 0 !important;
-  }
-  .bubble::after {
-    left: -10px !important;
-  }
-}
-
-
-
 /* ============================= 10. CONTACT ============================= */
 
 #contact h2 {
@@ -1762,6 +1633,7 @@ p {
 .faq-header h1 {
   font-size: 3rem;
   margin-bottom: 10px;
+  letter-spacing: -2px;
 }
 
 .faq-header p {
