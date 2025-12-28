@@ -1,21 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Perspikative</title>
-
-  <meta name="description" content="Perspikative est un portfolio artistique dédié à l'art visuel, aux illustrations et aux projets créatifs. Explore un univers graphique unique.">
-  <meta name="keywords" content="Perspikative, art, art visuel, portfolio, créations, illustrations, projets, univers créatif, dessins">
+  <title>Blog</title>
+  
+  <meta name="description" content="Le blog Perspikative explore l'art visuel, le processus créatif et les coulisses des dessins.">
+  <meta name="keywords" content="blog artistique, art visuel, processus créatif, inspiration artistique, création visuelle, Perspikative">
   <meta name="robots" content="index, follow">
-
-  <meta property="og:title" content="Perspikative" />
-  <meta property="og:description" content="✏️ i make art. welcome to my world" />
-  <meta property="og:image" content="https://tartineske.github.io/perspikative/preview.jpg" />
-  <meta property="og:url" content="https://tartineske.github.io/perspikative/" />
-  <meta property="og:type" content="website" />
 
   <meta name="theme-color" content="#58b3a2" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#344f4a" media="(prefers-color-scheme: dark)">
@@ -38,11 +31,11 @@
   gtag('config', 'G-MH68ZWLYM8');
 </script>
 
-<body class="home">
+<body class="blog">
 
   <nav class="mobile-nav">
-    <a href="index.html" class="nav-icon active" title="Accueil">
-      <img src="logos/accueil-active.svg" alt="Accueil">
+    <a href="index.html" class="nav-icon" title="Accueil">
+      <img src="logos/accueil.svg" alt="Accueil">
     </a>
     <a href="portfolio.html" class="nav-icon" title="Portfolio">
       <img src="logos/portfolio.svg" alt="Portfolio">
@@ -50,8 +43,8 @@
     <a href="rechercher.html" class="nav-icon" title="Rechercher">
       <img src="logos/rechercher.svg" alt="Rechercher">
     </a>
-    <a href="blog/blog.html" class="nav-icon" title="Blog">
-      <img src="logos/blog.svg" alt="Blog">
+    <a href="blog.html" class="nav-icon active" title="Blog">
+      <img src="logos/blog-active.svg" alt="Blog">
     </a>
     <a href="contact.html" class="nav-icon" title="Contact">
       <img src="logos/contact.svg" alt="Contact">
@@ -63,12 +56,11 @@
       <div class="logo">
         <img src="logo.svg" alt="Perspikative logo">
       </div>
-
       <div class="nav-right">
         <ul class="nav-tabs">
-          <li><a href="index.html" class="tab active">ACCUEIL</a></li>
+          <li><a href="index.html" class="tab">ACCUEIL</a></li>
           <li><a href="portfolio.html" class="tab">PORTFOLIO</a></li>
-          <li><a href="blog/blog.html" class="tab">BLOG</a></li>
+          <li><a href="blog.html" class="tab active">BLOG</a></li>
           <li><a href="contact.html" class="tab">CONTACT</a></li>
         </ul>
 
@@ -89,35 +81,60 @@
 
   <div class="blur-overlay"></div>
 
-  <section class="home-title">
-    <img src="logos/home-title1.svg" class="title-img img-1" alt="Perspikative title 1">
-    <img src="logos/home-title2.svg" class="title-img img-2" alt="Perspikative title 2">
-    <img src="logos/home-title3.svg" class="title-img img-3" alt="Perspikative title 3">
-  </section>
+  <main class="blog-main">
+    <section class="blog-grid">
 
-  <section class="cta-section">
-    <div class="cta-container">
-      <h2>PLONGE DANS L'UNIVERS DE PERSPIKATIVE</h2>
-      <p class="cta-subtext">
-        Explore, suis et découvre un univers de création visuelle et d’idées en mouvement.
-      </p>
+      <a href="blog/systeme-de-likes.html" class="blog-link">
+        <article class="blog-card">
 
-      <div class="cta-buttons">
-        <a href="https://www.whatsapp.com/channel/0029VaKP3Kd5Ui2gky1r5m3y" 
-           target="_blank" class="cta-btn whatsapp">
-          SUIS MOI SUR WHATSAPP
-        </a>
+          <div class="blog-image">
+            <img src="portfolio/creations/41.webp" alt="Aperçu du système de likes">
+            <span class="blog-tag fonctionnalite">Fonctionnalité</span>
+          </div>
 
-        <a href="portfolio.html" class="cta-btn portfolio">
-          VISITE LE PORTFOLIO
-        </a>
+          <div class="blog-content">
+            <h2>Nouveau système de likes</h2>
+            <p>
+              Un cœur discret, une animation fluide et un compteur intelligent
+              pour valoriser chaque création sans perturber l'expérience visuelle.
+            </p>
+          </div>
 
-        <a href="art-challenge.html" class="cta-btn about">
-          PARTICIPE AU ART CHALLENGE
-        </a>
-      </div>
-    </div>
-  </section>
+        </article>
+      </a>
+
+
+      <article class="blog-card">
+        <div class="blog-image">
+          <img src="portfolio/creations/40.webp" alt="Nouvelle création">
+          <span class="blog-tag creation">Nouvelle création</span>
+        </div>
+        <div class="blog-content">
+          <h2>Illustration — Entre deux mondes</h2>
+          <p>
+            Une exploration graphique entre rêve et architecture,
+            là où les perspectives commencent à mentir.
+          </p>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <div class="blog-image">
+          <img src="portfolio/creations/39.webp" alt="Actualité Perspikative">
+          <span class="blog-tag actu">Actu</span>
+        </div>
+        <div class="blog-content">
+          <h2>Perspikative évolue</h2>
+          <p>
+            Nouvelle direction visuelle, optimisations mobiles et
+            petites expériences interactives en préparation.
+          </p>
+        </div>
+      </article>
+
+    </section>
+  </main>
+
 
   <footer>
     <div class="social-icons">
@@ -155,19 +172,5 @@
   </script>
 
   <script src="script.js"></script>
-
-<script>
-window.axeptioSettings = {
-  clientId: "693dad89bbc710e67d044a6f",
-  cookiesVersion: "31aed011-b76b-4fc2-b5d1-3604d7813390",
-};
- 
-(function(d, s) {
-  var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
-  e.async = true; e.src = "//static.axept.io/sdk.js";
-  t.parentNode.insertBefore(e, t);
-})(document, "script");
-</script>
-
 </body>
 </html>
