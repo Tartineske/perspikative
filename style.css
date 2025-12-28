@@ -1132,7 +1132,6 @@ main.creations h2 {
   }
 
   .lightbox-right {
-    max-height: 60vh; /* limite la hauteur sur mobile */
     overflow-y: auto; /* scroll si besoin */
     padding-bottom: 10px;
   }
@@ -1251,7 +1250,7 @@ main.creations h2 {
   font-size: 1rem;
   color: #fff;
   backdrop-filter: blur(10px);
-  transition: background 0.3s;
+  transition: background-color 0.3s;
 }
 
 .search-input::placeholder {
@@ -1576,8 +1575,6 @@ main.creations h2 {
 
 
 
-FAQ 2222222222222222222222222222222222222222222222222
-
 /* ====== FAQ Page Styles ====== */
 .faq-page {
   max-width: 900px;
@@ -1596,7 +1593,7 @@ FAQ 2222222222222222222222222222222222222222222222222
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 1rem 1.5rem;
   cursor: pointer;
-  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
   position: relative;
   margin-bottom: 0.5rem; /* espace sous la bulle avant la réponse */
 }
@@ -1789,7 +1786,12 @@ FAQ 2222222222222222222222222222222222222222222222222
   }
 }
 
-
+@media (max-width: 480px) {
+  main.art-challenge {
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+  }
+}
 
 /* ===== Responsive ===== */
 @media (max-width: 900px) {
