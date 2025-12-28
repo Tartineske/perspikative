@@ -1586,7 +1586,6 @@ main.creations h2 {
   display: flex;
   flex-direction: column;
   gap: 1.5rem; /* espace entre les items */
-  font-family: "Rubik", sans-serif;
 }
 
 /* ====== FAQ Item (Question Bubble) ====== */
