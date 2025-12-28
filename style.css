@@ -1,211 +1,8 @@
-.like-bubble {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.25);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.3);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  cursor: pointer;
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: #222;
-  transition: transform 0.2s ease, background 0.2s ease;
-}
-
-.like-bubble:hover {
-  transform: scale(1.05);
-  background: rgba(255,255,255,0.35);
-}
-
-.like-icon {
-  width: 18px;
-  height: 18px;
-}
-
-.like-count {
-  font-size: 0.85rem;
-}
-
-
-/* ===== STYLE BLOG (à placer dans ton CSS) ===== */
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  padding: 32px;
-}
-
-@media (max-width: 900px) {
-  .blog-grid {
-    grid-template-columns: 1fr;
-    padding: 16px;
-  }
-}
-
-.blog-card {
-  cursor: pointer;
-  background: rgba(255,255,255,0.14);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 20px;
-  overflow: hidden;
-  transition: transform .3s ease, box-shadow .3s ease;
-}
-
-.blog-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
-}
-
-.blog-card-image {
-  width: 100%;
-  aspect-ratio: 7 / 3;
-  background-size: cover;
-  background-position: center;
-}
-
-.blog-card-content {
-  padding: 18px 20px 22px;
-}
-
-.blog-card h3 {
-  font-family: 'Maneola', serif;
-  font-size: 1.4rem;
-  margin: 0 0 10px;
-}
-
-.blog-card p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  opacity: 0.9;
-  margin: 0;
-}
-
-/* Overlay */
-.overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(6px);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.overlay.active {
-  display: flex;
-}
-
-.overlay-window {
-  max-width: 720px;
-  width: calc(100% - 32px);
-  background: rgba(255,255,255,0.16);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255,255,255,0.28);
-  border-radius: 20px;
-  padding: 28px;
-  animation: pop .35s ease;
-}
-
-@keyframes pop {
-  from { transform: scale(0.96); opacity: 0; }
-  to { transform: scale(1); opacity: 1; }
-}
-
-.overlay-close {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  background: none;
-  border: none;
-  color: inherit;
-  font-size: 1.2rem;
-  cursor: pointer;
-  opacity: 0.7;
-}
-
-.overlay-close:hover { opacity: 1; }
-
-
-
-
-
-
-/* ===================== VERSION MOBILE LÉGÈRE ===================== */
-@media (max-width: 300px) { /* plus réaliste pour mobile */
-  /* Layout principal */
-  .layout-3colonnes {
-    display: none !important;
-    margin: none !important;
-  }
-  .layout-2colonnes {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 0.5rem !important; /* espace réduit entre les colonnes */
-    margin: none !important;
-  }
-
-  /* Colonnes */
-  .layout-2colonnes .col {
-    width: 100% !important;
-    gap: 0.5rem !important;
-    margin: none !important;
-  }
-
-  /* Images */
-  .layout img {
-    width: 100% !important;
-    height: auto !important;
-    border-radius: 6px !important;
-    object-fit: cover !important;
-    margin: none !important;
-  }
-}
-
-
-@media (max-width: 480px) {
-  main {
-    padding-left: 50px !important;
-    padding-right: 50px !important;
-  }
-
-  .creations {
-    padding-left: 0rem !important;
-    padding-right: 0rem !important;
-  }
-
-  .layout-2colonnes {
-    gap: 0.5rem !important;
-  }
-
-  .layout-2colonnes img {
-    border-radius: 6px !important;
-  }
-}
-
-@media (max-width: 480px) {
-  main.creations,
-  main.creations .layout-2colonnes,
-  main.creations .layout-3colonnes {
-    padding-left: 8px !important;
-    padding-right: 8px !important;
-  }
-}
-
-
-
-
-
-
 /* ============================= 1. IMPORTS ET PARAMÈTRES GLOBAUX ============================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
 
 @font-face {
   font-family: 'Maneola';
@@ -1106,6 +903,67 @@ main.creations h2 {
 
 
 
+/* ===================== VERSION MOBILE LÉGÈRE ===================== */
+@media (max-width: 300px) { /* plus réaliste pour mobile */
+  /* Layout principal */
+  .layout-3colonnes {
+    display: none !important;
+    margin: none !important;
+  }
+  .layout-2colonnes {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important; /* espace réduit entre les colonnes */
+    margin: none !important;
+  }
+
+  /* Colonnes */
+  .layout-2colonnes .col {
+    width: 100% !important;
+    gap: 0.5rem !important;
+    margin: none !important;
+  }
+
+  /* Images */
+  .layout img {
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 6px !important;
+    object-fit: cover !important;
+    margin: none !important;
+  }
+}
+
+
+@media (max-width: 480px) {
+  main {
+    padding-left: 50px !important;
+    padding-right: 50px !important;
+  }
+
+  .creations {
+    padding-left: 0rem !important;
+    padding-right: 0rem !important;
+  }
+
+  .layout-2colonnes {
+    gap: 0.5rem !important;
+  }
+
+  .layout-2colonnes img {
+    border-radius: 6px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  main.creations,
+  main.creations .layout-2colonnes,
+  main.creations .layout-3colonnes {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+}
+
 
 
 /* --------- Layout style --------- */
@@ -1264,6 +1122,7 @@ main.creations h2 {
     flex-direction: column;
     align-items: flex-start;
     text-align: left;
+    overflow-y: auto;
     padding: 10px 15px; /* padding plus adapté pour mobile */
     gap: 8px; /* espace entre image et texte */
   }
@@ -1285,14 +1144,14 @@ main.creations h2 {
   }
 
   .lightbox-right p {
-    font-size: 1.1rem; /* texte un peu plus lisible */
+    font-size: 0.8rem;
   }
 
   .lightbox-close {
     top: 20px;
     right: 25px;
     background: rgba(0, 0, 0, 0.6);
-    padding: 10px;
+    padding: 20px;
     border-radius: 50%;
     width: 35px;
     height: 35px;
@@ -2282,8 +2141,10 @@ footer {
 }
 
 footer p {
-  line-height: 1.3; /* Diminue l'interligne (par défaut souvent 1.4 ou 1.5) */
-  margin: 0;         /* Supprime le margin vertical par défaut */
+  line-height: 1.3;
+  margin: 0; 
+  font-family: "Rubik", Arial, sans-serif;
+  font-weight: 100 !important;
 }
 
 footer a.footer-link {
@@ -2337,6 +2198,21 @@ footer a.footer-link:hover::after {
   opacity: 1;
 }
 
+@media (max-width: 900px) {
+  footer {
+    font-size: 0.85rem;
+    padding: 12px;
+  }
 
+  .social-icons {
+    gap: 0.8rem;
+    padding: 1rem 0;
+  }
+
+  .social-icons a img {
+    width: 26px;
+    height: 26px;
+  }
+}
 
 
