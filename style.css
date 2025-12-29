@@ -491,8 +491,8 @@ body.menu-open .blur-overlay {
   }
 
   .mobile-nav .nav-icon img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
     transition: transform 0.2s ease, filter 0.3s ease;
   }
