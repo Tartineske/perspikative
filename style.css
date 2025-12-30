@@ -139,7 +139,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* --- Désactive les halos bleus au toucher sur les écrans tactiles --- */
@@ -150,10 +150,19 @@ body {
   label,
   input,
   select,
+  .toggle,
+  .switch,
+  .slider,
   textarea {
     -webkit-tap-highlight-color: transparent;
     outline: none;
   }
+
+@media (pointer: coarse) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
 
   a:focus-visible,
   button:focus-visible,
@@ -439,6 +448,66 @@ body.menu-open .blur-overlay {
   display: none;
 }
 
+/* ============================= SUBMISSION FORM STYLES ============================= */
+.submission-form {
+  max-width: 820px;
+  margin: 30px auto;
+  background: rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.35);
+  border: 1px solid rgba(255, 255, 255, 0.459);
+}
+
+.submission-form h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+  margin-bottom: 12px;
+}
+
+.submission-form label {
+  display: block;
+  margin: 10px 0 6px;
+  font-weight: 600;
+}
+
+.submission-form input[type="text"],
+.submission-form input[type="email"],
+.submission-form input[type="tel"],
+.submission-form textarea,
+.submission-form input[type="file"] {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.25);
+  color: var(--text);
+}
+
+.submission-form textarea { resize: vertical; }
+
+.submission-form .image-preview { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+.submission-form .image-preview .preview-thumb { max-width:140px; height:auto; border-radius:6px; box-shadow:0 6px 18px rgba(0,0,0,0.3); }
+
+.submission-form button[type="submit"] {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(90deg,#4AA9A1,#2CA877);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form-note { font-size:0.9rem; color: rgba(255,255,255,0.7); margin-top:10px; }
+
+@media (max-width: 680px) {
+  .submission-form { padding: 12px; margin: 18px; }
+  .submission-form h2 { font-size: 1.25rem; }
+}
+
 @media (max-width: 768px) {
   .mobile-menu {
     top: 85px; /* remonte le menu sur mobile */
@@ -491,8 +560,8 @@ body.menu-open .blur-overlay {
   }
 
   .mobile-nav .nav-icon img {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
     transition: transform 0.2s ease, filter 0.3s ease;
   }
@@ -679,9 +748,10 @@ body.home {
 
 /* Spécifique à chaque bouton */
 .cta-btn.whatsapp { background: rgba(255, 255, 255, 0.1); }
-.cta-btn.portfolio { background: rgba(255, 255, 255, 0.1); }
-.cta-btn.about { background: rgba(255, 255, 255, 0.1); }
+.cta-btn.blog { background: rgba(255, 255, 255, 0.1); }
+.cta-btn.art-challenge { background: rgba(255, 255, 255, 0.1); }
 
+/* Responsive */
 @media (max-width: 700px) {
   .cta-container {
     padding: 40px 20px;
@@ -1040,7 +1110,7 @@ main.creations h2 {
 }
 
 @keyframes fadeIn {
-  from { transform: scale(0.95); opacity: 0; }
+  from { transform: scale(0.90); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
 
@@ -1124,15 +1194,20 @@ main.creations h2 {
     text-align: left;
     padding: 10px 15px; /* padding plus adapté pour mobile */
     gap: 8px; /* espace entre image et texte */
+    max-height: 100dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .lightbox-left img {
     max-width: 100%; /* image plus large mais pas full */
     height: auto;
+    object-fit: contain;
+    display: block;
   }
 
   .lightbox-right {
-    overflow-y: auto; /* scroll si besoin */
+    overflow-y: visible;
     padding-bottom: 10px;
   }
 
