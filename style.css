@@ -1137,6 +1137,7 @@ main.creations h2 {
     max-height: 100dvh;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    border-radius: 0px;
   }
 
   .lightbox-left img {
