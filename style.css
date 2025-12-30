@@ -500,8 +500,8 @@ body.menu-open .blur-overlay {
   }
 
   .mobile-nav .nav-icon img {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
     transition: transform 0.2s ease, filter 0.3s ease;
   }
