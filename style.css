@@ -139,7 +139,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  transition: background 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* --- Désactive les halos bleus au toucher sur les écrans tactiles --- */
@@ -150,10 +150,19 @@ body {
   label,
   input,
   select,
+  .toggle,
+  .switch,
+  .slider,
   textarea {
     -webkit-tap-highlight-color: transparent;
     outline: none;
   }
+
+@media (pointer: coarse) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
 
   a:focus-visible,
   button:focus-visible,
@@ -437,7 +446,7 @@ body.menu-open .blur-overlay {
 /* --- Mobile nav bar --- */
 .mobile-nav {
   display: none;
-}
+}
 
 @media (max-width: 768px) {
   .mobile-menu {
@@ -491,8 +500,8 @@ body.menu-open .blur-overlay {
   }
 
   .mobile-nav .nav-icon img {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
     transition: transform 0.2s ease, filter 0.3s ease;
   }
@@ -679,9 +688,10 @@ body.home {
 
 /* Spécifique à chaque bouton */
 .cta-btn.whatsapp { background: rgba(255, 255, 255, 0.1); }
-.cta-btn.portfolio { background: rgba(255, 255, 255, 0.1); }
-.cta-btn.about { background: rgba(255, 255, 255, 0.1); }
+.cta-btn.blog { background: rgba(255, 255, 255, 0.1); }
+.cta-btn.art-challenge { background: rgba(255, 255, 255, 0.1); }
 
+/* Responsive */
 @media (max-width: 700px) {
   .cta-container {
     padding: 40px 20px;
@@ -1040,7 +1050,7 @@ main.creations h2 {
 }
 
 @keyframes fadeIn {
-  from { transform: scale(0.95); opacity: 0; }
+  from { transform: scale(0.90); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
 
@@ -1124,15 +1134,21 @@ main.creations h2 {
     text-align: left;
     padding: 10px 15px; /* padding plus adapté pour mobile */
     gap: 8px; /* espace entre image et texte */
+    max-height: 100dvh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 0px;
   }
 
   .lightbox-left img {
     max-width: 100%; /* image plus large mais pas full */
     height: auto;
+    object-fit: contain;
+    display: block;
   }
 
   .lightbox-right {
-    overflow-y: auto; /* scroll si besoin */
+    overflow-y: visible;
     padding-bottom: 10px;
   }
 
