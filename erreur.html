@@ -10,6 +10,36 @@
 <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
+  @media (pointer: coarse) {
+    a,
+    button,
+    img,
+    label,
+    input,
+    select,
+    .toggle,
+    .switch,
+    .slider,
+    textarea {
+      -webkit-tap-highlight-color: transparent;
+      outline: none;
+    }
+
+  @media (pointer: coarse) {
+    * {
+      -webkit-tap-highlight-color: transparent;
+    }
+  }
+
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    select:focus-visible,
+    textarea:focus-visible {
+      outline: none;
+    }
+  }
+
   html, body {
     margin: 0;
     padding: 0;
