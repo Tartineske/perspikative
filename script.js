@@ -351,63 +351,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// ============================= 9. GESTION DES FAQ =============================
-
-// Sélection de tous les items FAQ
-const items = document.querySelectorAll('.faq-item');
-
-items.forEach(item => {
-  const answer = item.nextElementSibling; // la réponse doit être juste après la question
-
-  // Initialisation : réponse cachée
-  answer.style.height = '0';
-  answer.style.overflow = 'hidden';
-  answer.style.transition = 'height 0.3s ease, opacity 0.3s ease';
-  answer.style.opacity = '0';
-
-  // Gestion du clic
-  item.addEventListener('click', () => {
-    const isOpen = item.classList.contains('active');
-
-    if (isOpen) {
-      // fermer
-      item.classList.remove('active');
-      answer.style.height = '0';
-      answer.style.opacity = '0';
-    } else {
-      // ouvrir
-      item.classList.add('active');
-      // calcule la hauteur réelle du contenu
-      answer.style.height = answer.scrollHeight + 'px';
-      answer.style.opacity = '1';
-    }
-  });
-
-  // Pour gérer le redimensionnement si la réponse est ouverte
-  window.addEventListener('resize', () => {
-    if (item.classList.contains('active')) {
-      answer.style.height = answer.scrollHeight + 'px';
-    }
-  });
-});
-
-
-
 // ============================= 10. ANTI CLIQUE GAUCHE =============================
 
 // Bloque clic droit partout
 document.addEventListener("contextmenu", e => e.preventDefault());
-
-// Bloque clics sur images
-document.querySelectorAll("img").forEach(img => {
-  img.addEventListener("mousedown", e => {
-    e.preventDefault();
-  });
-
-  img.addEventListener("dragstart", e => {
-    e.preventDefault();
-  });
-});
 
 
 
@@ -420,7 +367,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   const targetImg = document.getElementById(hash);
   if (targetImg) {
-    // Reutilise exactement la même logique que pour le clic
+    // Réutilise exactement la même logique que pour le clic
     lightboxImg.src = targetImg.src;
     lightboxTitle.textContent = targetImg.dataset.title || '';
     lightboxDesc.innerHTML = targetImg.dataset.desc || '';
@@ -429,5 +376,63 @@ window.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = 'hidden';
   }
 });
+
+document.addEventListener('click', (e) => {
+  const clickedImg = e.target.closest('.prspk-thumb');
+  if (!clickedImg) return;
+
+  // Si l'image cliquée n'a PAS de data-title, on est en 2 colonnes
+  if (!clickedImg.dataset.title) {
+    const id = clickedImg.id;
+    if (!id) return;
+
+    // On va chercher l'image "riche" dans la version 3 colonnes
+    const sourceImg = document.querySelector(
+      `.layout-3colonnes .prspk-thumb#${CSS.escape(id)}`
+    );
+
+    if (!sourceImg) return;
+
+    // On simule exactement l'ouverture normale de la lightbox
+    lightboxImg.src = sourceImg.src;
+    lightboxTitle.textContent = sourceImg.dataset.title || '';
+    lightboxDesc.innerHTML = sourceImg.dataset.desc || '';
+
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+
+    // Bonus : met à jour l'URL
+    history.pushState(null, '', `#${id}`);
+  }
+});
+
+// ============================= 12. GESTION DU MODE SOMBRE =============================
+
+document.addEventListener("DOMContentLoaded", () => {
+  const root = document.documentElement;
+  const savedTheme = localStorage.getItem("theme");
+
+  // Appliquer le thème partout
+  if (savedTheme === "dark") {
+    root.setAttribute("data-theme", "dark");
+  }
+
+  // Gestion de la toggle (seulement si elle existe)
+  const darkToggle = document.getElementById("dark-mode");
+  if (!darkToggle) return;
+
+  darkToggle.checked = savedTheme === "dark";
+
+  darkToggle.addEventListener("change", () => {
+    if (darkToggle.checked) {
+      root.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.removeAttribute("data-theme");
+      localStorage.removeItem("theme");
+    }
+  });
+});
+
 
 // ============================= FIN DU SCRIPT =============================
