@@ -2386,3 +2386,22 @@ html[data-theme="dark"] {
   --border: rgba(255, 255, 255, 0.12);
   color-scheme: dark;
 }
+
+/* ===== Force le mode sombre partout (desktop + mobile) ===== */
+html[data-theme="dark"] {
+  --bg: #0e0f13;
+  --text: #f2f2f2;
+  --card: rgba(20, 22, 30, 0.7);
+  --border: rgba(255, 255, 255, 0.12);
+  color-scheme: dark;
+}
+
+/* Empêche prefers-color-scheme d’écraser le choix utilisateur */
+@media (prefers-color-scheme: dark) {
+  html[data-theme="dark"] {
+    --bg: #0e0f13;
+    --text: #f2f2f2;
+    --card: rgba(20, 22, 30, 0.7);
+    --border: rgba(255, 255, 255, 0.12);
+  }
+}
