@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OUPSI — Perspikative</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Rubik', sans-serif;
+  }
+
+  body {
+    background: linear-gradient(135deg, #2e1f60, #7b2cbf);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    flex-direction: column;
+  }
+
+  h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 0;
+  }
+
+  p {
+    font-size: 1.25rem;
+    font-weight: 400;
+    margin: 0.5rem 0 2rem;
+    opacity: 0.85;
+  }
+
+  .btn-glass {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.2s, background 0.2s;
+  }
+
+  .btn-glass:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.05);
+  }
+
+  .socials {
+    margin-top: 4rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .socials a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    opacity: 0.75;
+    transition: opacity 0.2s;
+  }
+
+  .socials a:hover {
+    opacity: 1;
+  }
+
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<h1>OUPSI</h1>
+<p>Something goes wrong.</p>
+
+<a class="btn-glass" href="/perspikative/">Retourner à l'accueil</a>
+
+<div class="socials">
+  <a href="https://instagram.com/TONINSTAGRAM" target="_blank">IG</a>
+  <a href="https://youtube.com/@perspikative" target="_blank">YT</a>
+  <a href="https://linktr.ee/TONELINKTR" target="_blank">LINK</a>
+</div>
+
+</body>
+</html>
