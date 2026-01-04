@@ -760,8 +760,10 @@ body.home {
   backdrop-filter: blur(15px) saturate(180%);
   -webkit-backdrop-filter: blur(15px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.25);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow:
+    inset 0 0 10px rgba(255 255 255 / 0.2),
+    0 6px 20px rgba(0,0,0,0.2);
 }
 
 .portfolio-card img {
@@ -782,8 +784,8 @@ body.home {
   transform: translateX(-50%);
   background: rgba(255,255,255,0.18);
   border: 1px solid rgba(255,255,255,0.3);
-  backdrop-filter: blur(12px) saturate(160%);
-  -webkit-backdrop-filter: blur(12px) saturate(160%);
+  backdrop-filter: blur(10px) saturate(160%);
+  -webkit-backdrop-filter: blur(10px) saturate(160%);
   padding: 8px 24px;
   border-radius: 50px;
   color: #fff;
@@ -791,16 +793,16 @@ body.home {
   font-weight: 700;
   letter-spacing: 0.4px;
   text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  transition: background-color 0.3s ease, transform 0.3s ease;
+  transition: background-color 0.4s ease, transform 0.4s ease;
   box-shadow:
-    0 4px 15px rgba(0,0,0,0.3);
+    0 4px 15px rgba(0, 0, 0, 0.2);
     inset 0 0 10px rgba(255 255 255 / 0.2);
 }
 
 /* --- Hover --- */
 .portfolio-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 35px rgba(0,0,0,0.24);
+  box-shadow: 0 4px 17px rgba(0,0,0,0.22);
 }
 
 .portfolio-card:hover img {
@@ -999,13 +1001,13 @@ main.creations h2 {
   height: auto;
   border-radius: 12px;
   object-fit: cover;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
   cursor: pointer;
 }
 
 /* Effet au survol */
 .layout img:hover {
-  box-shadow: 0 10px 16px rgba(0,0,0,0.30);
+  box-shadow: 0 10px 16px rgba(0,0,0,0.25);
 }
 
 
@@ -2104,7 +2106,7 @@ main.settings-section {
 .mentions-content h1 {
   font-weight: 700;
   font-size: 2.4rem;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
   text-align: center;
 }
 
@@ -2127,10 +2129,10 @@ main.settings-section {
    (s'applique à tous les <p> dans .mentions-content, et aussi aux p.system-font pour rétro-compatibilité) */
 .mentions-content p,
 .mentions-content p.system-font {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  font-weight: 600;
-  font-size: 1.05rem;
-  line-height: 1.5;
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.2;
   color: #fff;
   max-width: 800px;
 }
@@ -2140,7 +2142,8 @@ main.settings-section {
   text-align: center;
   color: #ccc;
   font-size: 0.95rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
+  margin-top: 0;
   opacity: 0.8;
 }
 
@@ -2165,6 +2168,13 @@ main.settings-section {
   .mentions-content p,
   .mentions-content p.system-font {
     font-size: 1rem;
+  }
+
+  .mentions-date {
+    font-size: 0.95rem;
+    margin-bottom: 3rem;
+    margin-top: 0;
+    opacity: 0.8;
   }
 }
 
@@ -2195,6 +2205,13 @@ main.settings-section {
     max-width: 600px;
     margin: 0;
   }
+
+  .mentions-date {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    margin-top: 0;
+    opacity: 0.8;
+  }
 }
 
 .mentions-content .back-home {
@@ -2207,12 +2224,17 @@ main.settings-section {
   padding: 10px 10px;
   border-radius: 50%;
   border: 1px solid rgba(255 255 255 / 0.2);
-  transition: background 0.3s;
-  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s;
+  box-shadow: 
+    inset 0 0 10px rgba(255, 255, 255, 0.2),
+    0 4px 10px rgba(0,0,0,0.1);
 }
 
 .mentions-content .back-home:hover {
   background: rgba(255,255,255,0.25);
+  box-shadow:
+    inset 0 0 10px rgba(255, 255, 255, 0.2),
+    0 5px 13px rgba(0,0,0,0.15);
 }
 
 .mentions-content .back-home img {
@@ -2230,10 +2252,12 @@ main.settings-section {
     text-decoration: none;
     background: rgba(255,255,255,0.12);
     padding: 9px 9px;
-    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+    box-shadow:
+      inset 0 0 10px rgba(255, 255, 255, 0.2),
+      0 4px 10px rgba(0,0,0,0.1);
     border-radius: 50%;
     border: 1px solid rgba(255 255 255 / 0.2);
-    transition: background 0.3s;
+    transition: background-color 0.3s;
   }
 
     .mentions-content .back-home img {
@@ -2363,13 +2387,13 @@ footer a.footer-link:hover::after {
   }
 
   .social-icons {
-    gap: 0.8rem;
+    gap: 0.9rem;
     padding: 1rem 0;
   }
 
   .social-icons a img {
-    width: 26px;
-    height: 26px;
+    width: 28px;
+    height: 28px;
   }
 }
 
@@ -2385,4 +2409,23 @@ html[data-theme="dark"] {
   --card: rgba(20, 22, 30, 0.7);
   --border: rgba(255, 255, 255, 0.12);
   color-scheme: dark;
+}
+
+/* ===== Force le mode sombre partout (desktop + mobile) ===== */
+html[data-theme="dark"] {
+  --bg: #0e0f13;
+  --text: #f2f2f2;
+  --card: rgba(20, 22, 30, 0.7);
+  --border: rgba(255, 255, 255, 0.12);
+  color-scheme: dark;
+}
+
+/* Empêche prefers-color-scheme d’écraser le choix utilisateur */
+@media (prefers-color-scheme: dark) {
+  html[data-theme="dark"] {
+    --bg: #0e0f13;
+    --text: #f2f2f2;
+    --card: rgba(20, 22, 30, 0.7);
+    --border: rgba(255, 255, 255, 0.12);
+  }
 }
