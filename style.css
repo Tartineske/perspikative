@@ -2375,3 +2375,108 @@ html[data-theme="dark"] {
     --border: rgba(255, 255, 255, 0.12);
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+/* --- SECTION CTA PORTFOLIO --- */
+.portfolio-cta {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: transparent;
+}
+
+.portfolio-cta-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.portfolio-card {
+  position: relative;
+  width: 500px;
+  height: 300px;
+  max-width: 90vw;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.portfolio-collage {
+  width: 100%;
+  display: block;
+}
+
+/* Bouton glassmorphism */
+.portfolio-btn {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.portfolio-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #f0f0f0;
+}
+
+/* Images flottantes autour */
+.floating-img {
+  position: absolute;
+  width: 140px;
+  max-width: 15vw;
+  animation: float 10s ease-in-out infinite;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  border-radius: 10px;
+}
+
+.floating-left {
+  top: -40px;
+  left: -40px;
+}
+
+.floating-right {
+  bottom: -40px;
+  right: -40px;
+  animation-delay: 3s;
+}
+
+/* Animation flottante */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-15px) rotate(-5deg); }
+  50% { transform: translateY(10px) rotate(5deg); }
+  75% { transform: translateY(-10px) rotate(-3deg); }
+}
+
+/* Responsive mobile */
+@media (max-width: 700px) {
+  .portfolio-card {
+    width: 90vw;
+  }
+
+  .floating-img {
+    width: 50px;
+  }
+}
