@@ -1251,7 +1251,7 @@ main.creations h2 {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  padding: 12x px;
+  padding: 14px 24px 14px 20px;
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 40px;
   width: 100%;
@@ -1377,11 +1377,11 @@ main.creations h2 {
   }
   
   .search-bubble {
-    padding: 6px 10px 6px 10px
+    padding: 9px 10px 9px 18px
   }
   
   .search-input {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
   
   .result-thumb {
