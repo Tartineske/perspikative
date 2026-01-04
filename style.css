@@ -1251,24 +1251,27 @@ main.creations h2 {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  padding: 14px 24px 14px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 12px 24px 12px 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 40px;
   width: 100%;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
   box-sizing: border-box;
   box-shadow:
-    0 8px 32px rgba(0,0,0,0.1),
+    0 4px 16px rgba(0, 0, 0, 0.1),
     inset 0 0 8px rgba(255, 255, 255, 0.2);
 }
 
 .search-bubble:focus-within {
   background: rgba(255, 255, 255, 0.15);
+  box-shadow:
+    0 5px 21px rgba(0, 0, 0, 0.2),
+    inset 0 0 12px rgba(255, 255, 255, 0.3);
 }
 
 .search-logo {
-  width: 24px;
-  height: 24px;
+  width: 25px;
+  height: 25px;
   opacity: 0.8;
   margin-right: 10px;
   flex-shrink: 0;
@@ -1296,8 +1299,8 @@ main.creations h2 {
   margin-top: 30px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  padding-bottom: 40px;
+  gap: 13px;
+  padding-bottom: 70px;
 }
 
 /* --- Cartes de résultat --- */
@@ -1307,7 +1310,7 @@ main.creations h2 {
   align-items: center;
   background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 18px;
   padding: 8px;
   text-decoration: none;
@@ -1329,7 +1332,7 @@ main.creations h2 {
   object-fit: cover;
   margin-right: 15px;
   background: rgba(0,0,0,0.1);
-  border: 1px solid rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
   flex-shrink: 0;
 }
 
@@ -1377,13 +1380,19 @@ main.creations h2 {
   }
   
   .search-bubble {
-    padding: 9px 10px 9px 18px
+    padding: 9px 10px 9px 15px
   }
   
   .search-input {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   
+  .search-logo {
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+  }
+
   .result-thumb {
     width: 55px;
     height: 55px;
