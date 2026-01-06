@@ -2473,10 +2473,11 @@ html[data-theme="dark"] {
 /* Responsive mobile */
 @media (max-width: 700px) {
   .portfolio-card {
-    width: 90vw;
+    width: 300px;
+    height: 200px;
   }
 
   .floating-img {
-    width: 50px;
+    width: 150px;
   }
 }
