@@ -1766,15 +1766,19 @@ main.creations h2 {
 .art-challenge .logo-section h1 {
   font-family: "Maneola", sans-serif;
   font-weight: 400;
+  font-size: 2.2rem;
 }
 
 .glass {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 20px;
+  border-radius: 15px;
   padding: 9rem;
   margin: 1rem 0;
+  box-shadow:
+    inset 0 0 10px rgba(255,255,255,0.2),
+    0 8px 30px rgba(0,0,0,0.25);
 }
 
 .logo-section {
@@ -1813,7 +1817,7 @@ main.creations h2 {
 
 .intro p {
   margin: 0.1rem 0;
-  font-size: 1.1rem;
+  font-size: 1.05rem;
 }
 
 
@@ -2565,5 +2569,110 @@ html[data-theme="dark"] {
     bottom: -40px;
     right: 10px;
    animation-delay: 2s;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+.art-gallery {
+  margin: 3rem auto;
+  padding: 2rem;
+  max-width: 600px;
+  text-align: center;
+}
+
+.art-gallery-title {
+  font-size: 2.3rem;
+  margin-bottom: -1.2rem;
+}
+
+.art-gallery-subtitle {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-bottom: 1.6rem;
+}
+
+/* wrapper avec flèches */
+.art-gallery-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* piste scrollable */
+.art-gallery-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem;
+  scrollbar-width: none;
+}
+
+.art-gallery-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* cartes */
+.art-card {
+  flex: 0 0 calc(100% / 3 - 1rem); /* desktop = 3 */
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.art-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: filter 0.2s ease;
+}
+
+.art-card:hover img {
+  filter: brightness(0.4);
+}
+
+/* flèches */
+.gallery-arrow {
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: inherit;
+  font-size: 2.5rem;
+  padding: 0.1rem 0.8rem;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.gallery-arrow.left {
+  margin-right: 0.3rem;
+}
+
+.gallery-arrow.right {
+  margin-left: 0.3rem;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .art-card {
+    flex: 0 0 100%;
+    border-radius: 8px;
+  }
+
+  .art-card img {
+    border-radius: 8px;
+  }
+
+  .gallery-arrow {
+    font-size: 2.7rem;
   }
 }
