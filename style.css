@@ -2586,14 +2586,14 @@ html[data-theme="dark"] {
 }
 
 .art-gallery-title {
-  font-size: 1.8rem;
-  margin-bottom: 0.5rem;
+  font-size: 2rem;
+  margin-bottom: 0.3rem;
 }
 
 .art-gallery-subtitle {
-  font-size: 0.95rem;
-  opacity: 0.75;
-  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  opacity: 0.8;
+  margin-bottom: 1.4rem;
 }
 
 /* wrapper avec flèches */
