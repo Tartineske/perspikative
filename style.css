@@ -2676,6 +2676,17 @@ html[data-theme="dark"] {
 
 /* mobile */
 @media (max-width: 768px) {
+  .art-gallery-title {
+    font-size: 2.2rem;
+    line-height: -0.1rem;
+    margin-bottom: -1.3rem;
+  }
+
+  .art-gallery-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 1.6rem;
+  }
+
   .art-card {
     flex: 0 0 100%;
     border-radius: 8px;
