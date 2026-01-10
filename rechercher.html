@@ -119,6 +119,49 @@
   </footer>
 
   <script>
+    // --- EASTER EGGS ---
+    const easterEggs = {
+      "caca": {
+        img: "portfolio/easter-eggs/caca.webp",
+        text: "Merde, tu découvres des secrets"
+      },
+      "kk": {
+        img: "portfolio/easter-eggs/caca.webp",
+        text: "Merde, tu découvres des secrets"
+      },
+      "perspikative": {
+        img: "logo.svg",
+        text: "T'y es déjà canaille"
+      },
+      "art": {
+        img: "easter-eggs/art.gif",
+        text: "L'art est la clé de l'âme, voyageur"
+      },
+      "bonjour": {
+        text: "Heyy!"
+      },
+      "secret": {
+        img: "portfolio/easter-eggs/secret.gif",
+        text: "Perspikative regorge de secrets..."
+      },
+      "tout": {
+        text: "Ta recherche est un peu vaste, non ?"
+      },
+      "hack": {
+        text: "Bien essayé, farfadet."
+      },
+      "mascotte": {
+        img: "portfolio/mascotte/mascotte.png",
+        text: "Tadam!"
+      },
+      "ok": {
+        text: "Et c'est ok"
+      },
+      "je suis perdu": {
+        text: "Tu vas t'en sortir :)"
+      },
+    };
+
     // --- 1. BASE DE DONNÉES ---
     const siteContent = [
       { title: "Accueil", category: "Page", url: "index.html", tags: "maison home accueil perspikative", img: "logos/accueil.svg" },
@@ -205,7 +248,20 @@
     searchInput.addEventListener('input', function(e) {
       const query = e.target.value.toLowerCase().trim();
       resultsContainer.innerHTML = ''; 
+      
+      // 🥚 Easter egg
+      if (easterEggs[query]) {
+        const egg = easterEggs[query];
+        let html = `<div class="easter-egg">`;
 
+        if (egg.img) html += `<img src="${egg.img}" alt="Easter egg">`;
+        if (egg.text) html += `<p>${egg.text}</p>`;
+
+        html += `</div>`;
+        resultsContainer.innerHTML = html;
+        return;
+      }
+      
       if (query.length < 2) return; 
 
       const results = siteContent.filter(item => {
