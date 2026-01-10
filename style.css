@@ -1818,12 +1818,13 @@ main.creations h2 {
 .logo-section h1 {
   font-size: 1.8rem;
   margin-top: 0rem;
+  line-height: 30px;
 }
 
 /* ------ Intro ------ */
 .intro {
   text-align: center;
-  margin-bottom: 5rem;
+  margin-bottom: 4rem;
 }
 
 .intro p {
@@ -1834,6 +1835,15 @@ main.creations h2 {
 
 
 /* ------ Thème du moment ------ */
+.section-separator {
+  width: 70%;
+  height: 3px;
+  margin: 0 auto 30px auto;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 99px;
+  backdrop-filter: blur(10px);
+}
+
 .left, .right {
   flex: 1 1 250px;
   flex-direction: column;
@@ -1853,6 +1863,7 @@ main.creations h2 {
   gap: 1rem;
   justify-content: center;
   flex-wrap: wrap;
+  margin-bottom: 2rem;
 }
 
 .count-item .label {
@@ -1900,20 +1911,14 @@ main.creations h2 {
     min-width: 50px;
     font-size: 1.2rem;
   }
-
-  .theme-bubble {
-    font-size: 1.3rem;
-  }
-
-  .theme-bubble span {
-    font-size: 1.5rem;
-  }
 }
 
 @media (max-width: 480px) {
   .count-bubble {
     min-width: 45px;
-    font-size: 1rem;
+    font-size: 1.7rem;
+    border-radius: 10px;
+    padding: 0.2rem 0.4rem;
   }
 
   .theme-bubble {
@@ -1923,6 +1928,10 @@ main.creations h2 {
   .theme-bubble span {
     font-size: 1.3rem;
   }
+
+  .countdown {
+    gap: 0.4rem;
+  }
 }
 
 /* ------ Responsive ------ */
@@ -1930,11 +1939,24 @@ main.creations h2 {
   main {
     padding: 1rem;
   }
+
   .logo-animated {
     width: 200px;
   }
+
   .logo-section h1 {
     font-size: 1.5rem;
+  }
+
+  .section-separator {
+    width: 70%;
+    height: 3px;
+
+    margin: 0px auto 20px auto;
+  }
+
+  .intro {
+    margin-bottom: 3rem;
   }
 }
 
