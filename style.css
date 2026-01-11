@@ -1252,7 +1252,7 @@ main.creations h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 60vh;
+  min-height: 70vh;
   padding-top: 20px;
 }
 
