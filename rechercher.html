@@ -42,7 +42,7 @@
     <a href="rechercher.html" class="nav-icon active" title="Rechercher">
       <img src="logos/rechercher-active.svg" alt="Rechercher">
     </a>
-    <a href="blog.html" class="nav-icon" title="Blog">
+    <a href="blog/blog.html" class="nav-icon" title="Blog">
       <img src="logos/blog.svg" alt="Blog">
     </a>
     <a href="contact.html" class="nav-icon" title="Contact">
@@ -59,7 +59,7 @@
         <ul class="nav-tabs">
           <li><a href="index.html" class="tab">ACCUEIL</a></li>
           <li><a href="portfolio.html" class="tab">PORTFOLIO</a></li>
-          <li><a href="blog.html" class="tab">BLOG</a></li>
+          <li><a href="blog/blog.html" class="tab">BLOG</a></li>
           <li><a href="contact.html" class="tab">CONTACT</a></li>
         </ul>
 
@@ -119,15 +119,85 @@
   </footer>
 
   <script>
+    // --- EASTER EGGS ---
+    const easterEggs = {
+      "caca": {
+        img: "portfolio/easter-eggs/caca.webp",
+        text: "Merde, tu découvres des secrets"
+      },
+      "kk": {
+        img: "portfolio/easter-eggs/caca.webp",
+        text: "Merde, tu découvres des secrets"
+      },
+      "perspikative": {
+        img: "logo.svg",
+        text: "T'y es déjà canaille"
+      },
+      "bonjour": {
+        text: "Heyy!"
+      },
+      "secret": {
+        img: "portfolio/easter-eggs/secret.gif",
+        text: "Perspikative regorge de secrets..."
+      },
+      "tout": {
+        text: "Ta recherche est un peu vaste, non ?"
+      },
+      "hack": {
+        text: "Bien essayé, farfadet."
+      },
+      "mascotte": {
+        img: "portfolio/easter-eggs/mascotte.webp",
+        text: "Tadam!"
+      },
+      "ok": {
+        text: "Et c'est ok"
+      },
+      "je suis perdu": {
+        text: "Tu vas t'en sortir :)"
+      },
+      "perdu": {
+        text: "Tu vas t'en sortir :)"
+      },
+      "help": {
+        text: "Besoin d'aide ? Contacte-moi via la page Contact."
+      },
+      "aide": {
+        text: "Besoin d'aide ? Contacte-moi via la page Contact."
+      },
+      "fuck": {
+        text: "Hep hep hep pas de grossiereté ici"
+      },
+      "tg": {
+        text: "Hep hep hep pas de grossiereté ici"
+      },
+      "ta gueule": {
+        text: "Hep hep hep pas de grossiereté ici"
+      },
+      "donald trump": {
+        img: "portfolio/easter-eggs/trump.webp",
+        text: "Ohh non pas lui"
+      },
+      "trump": {
+        img: "portfolio/easter-eggs/trump.webp",
+        text: "Ohh non pas lui"
+      },
+      "capybara": {
+        img: "portfolio/easter-eggs/capybara.webp"
+      },
+    };
+
     // --- 1. BASE DE DONNÉES ---
     const siteContent = [
-      { title: "Portfolio", category: "Portfolio", url: "portfolio/creations.html", tags: "créations dessin peinture art couleur traditionnel", img: "logos/portfolio.svg" },
+      { title: "Accueil", category: "Page", url: "index.html", tags: "maison home accueil perspikative", img: "logos/accueil.svg" },
+      { title: "Portfolio", category: "Portfolio", url: "portfolio.html", tags: "dessin art création illustration projet couleur traditionnel digital peinture aquarelle", img: "logos/portfolio.svg" },
       { title: "Créations", category: "Portfolio", url: "portfolio/creations.html", tags: "créations dessin peinture art couleur traditionnel", img: "logos/creations.svg" },
       { title: "Illustrations", category: "Portfolio", url: "portfolio/illustrations.html", tags: "illustrations dessin digital", img: "logos/illustrations.svg" },
       { title: "Projets", category: "Portfolio", url: "portfolio/projets.html", tags: "projets dessin concept traditionnel", img: "logos/projets.svg" },
       { title: "Art Challenge", category: "Challenge", url: "art-challenge.html", tags: "art challenge défi concours thème dessin", img: "logos/art-challenge.svg" },
       { title: "Contact", category: "Contact", url: "contact.html", tags: "contact message email", img: "logos/contact.svg" },
       { title: "FAQ", category: "FAQ", url: "faq/faq.html", tags: "FAQ questions réponses", img: "logos/faq.svg" },
+      { title: "Blog", category: "Blog", url: "blog.html", tags: "blog articles actualité actu nouveauté infos feed", img: "logos/blog.svg" },
       { title: "Paramètres", category: "Paramètres", url: "parametres.html", tags: "paramètres réglages", img: "logos/general.svg" },
       { title: "Mentions légales", category: "Légal", url: "mentions-legales.html", tags: "mention légales", img: "logos/mentions-legales.svg" },
       { title: "Politique de confidentialité", category: "Légal", url: "politique-de-confidentialite.html", tags: "politique de confidentialité", img: "logos/politique-de-confidentialite.svg" },
@@ -139,8 +209,14 @@
       { title: "FAQ - Confidentialié", category: "FAQ", url: "faq/confidentialite/confidentialite.html", tags: "FAQ confidentialité", img: "logos/confidentialite.svg" },
       { title: "FAQ - Blog", category: "FAQ", url: "faq/blog/blog.html", tags: "FAQ blog", img: "logos/blog.svg" },
       { title: "FAQ - Fonctionnalités", category: "FAQ", url: "faq/fonctionnalites/fonctionnalites.html", tags: "FAQ fonctionnalités", img: "logos/fonctionnalites.svg" },
+      { title: "FAQ - ART Challenge", category: "FAQ", url: "faq/art-challenge/art-challenge.html", tags: "FAQ art challenge", img: "logos/art-challenge.svg" },
+      { title: "FAQ - Recherche", category: "FAQ", url: "faq/recherche/recherche.html", tags: "FAQ recherche", img: "logos/rechercher.svg" },
 
 
+      { title: "Mode sombre", category: "Paramètres", url: "parametres.html", tags: "noir nuit", img: "logos/mode-sombre.svg" },
+      { title: "Police contrastée", category: "Paramètres", url: "parametres.html", tags: "contraste gras accessible accessibilité visibilité", img: "logos/police.svg" },
+      { title: "Animations", category: "Paramètres", url: "parametres.html", tags: "animations", img: "logos/animations.svg" },
+      
       { title: "YouTube", category: "Réseaux sociaux", url: "https://youtube.com/@perspikative", tags: "YouTube vidéo", img: "logos/youtube.svg" },
       { title: "Instagram", category: "Réseaux sociaux", url: "https://instagram.com/perspikative", tags: "Instagram", img: "logos/instagram.svg" },
       { title: "Linktree", category: "Réseaux sociaux", url: "https://linktr.ee/perspikative", tags: "Linktree liens", img: "logos/linktree.svg" },
@@ -148,8 +224,8 @@
       { title: "Pinterest", category: "Réseaux sociaux", url: "https://pinterest.com/perspikative", tags: "Pinterest", img: "logos/pinterest.svg" },
 
       
-      { title: "The Lil Stork", category: "Œuvre", url: "portfolio/creations.html#the-lil-stork", tags: "cigogne oiseau étang forêt", img: "logos/creations.svg" },
-      { title: "The Cozy House of the field mouse", category: "Œuvre", url: "portfolio/creations.html#the-cozy-house-of-the-field-mouse", tags: "souris cozy", img: "logos/creations.svg" },
+      { title: "The Lil Stork", category: "Œuvre", url: "portfolio/creations.html#the-lil-stork", tags: "cigogne oiseau étang forêt arbre mare maison", img: "logos/creations.svg" },
+      { title: "The Cozy House of the field mouse", category: "Œuvre", url: "portfolio/creations.html#the-cozy-house-of-the-field-mouse", tags: "souris cozy livre assiette cheminée feu tapis", img: "logos/creations.svg" },
       { title: "A Wanderer in Ginger Wood", category: "Œuvre", url: "portfolio/creations.html#a-wanderer-in-ginger-wood", tags: "valise forêt automne fille bois rousse", img: "logos/creations.svg" },
       { title: "The Old, Old Lighthouse", category: "Œuvre", url: "portfolio/creations.html#the-old-old-lighthouse", tags: "phare nuages", img: "logos/creations.svg" },
       { title: "The IA Home", category: "Œuvre", url: "portfolio/creations.html#the-ia-home", tags: "ia intelligence artificielle code erreur bocal cerveau", img: "logos/creations.svg" },
@@ -161,29 +237,29 @@
       { title: "Once upon a dream", category: "Œuvre", url: "portfolio/creations.html#once-upon-a-dream", tags: "rêve nuit", img: "logos/creations.svg" },
       { title: "Birkskov", category: "Œuvre", url: "portfolio/creations.html#birkskov", tags: "forêt bouleau neige", img: "logos/creations.svg" },
       { title: "Heading for the Door", category: "Œuvre", url: "portfolio/creations.html#heading-for-the-door", tags: "porte 2025 nouvel an fête feu d'artifice", img: "logos/creations.svg" },
-      { title: "Winter Lights", category: "Œuvre", url: "portfolio/creations.html#winter-lights", tags: "hiver noel guirlande neige", img: "logos/creations.svg" },
-      { title: "Le Palais des Rêves", category: "Œuvre", url: "portfolio/creations.html#le-palais-des-reves", tags: "palais boules", img: "logos/creations.svg" },
+      { title: "Winter Lights", category: "Œuvre", url: "portfolio/creations.html#winter-lights", tags: "hiver noel guirlande neige noël", img: "logos/creations.svg" },
+      { title: "Le Palais des Rêves", category: "Œuvre", url: "portfolio/creations.html#le-palais-des-reves", tags: "palais boules pont jaune mauve", img: "logos/creations.svg" },
       { title: "the bird house", category: "Œuvre", url: "portfolio/creations.html#the-bird-house", tags: "maison oiseau automne arbres", img: "logos/creations.svg" },
-      { title: "Airplane", category: "Œuvre", url: "portfolio/creations.html#airplane", tags: "avion nuages rose collab collaboration", img: "logos/creations.svg" },
-      { title: "L'auberge", category: "Œuvre", url: "portfolio/creations.html#l-auberge", tags: "maison ciel rêve", img: "logos/creations.svg" },
+      { title: "Airplane", category: "Œuvre", url: "portfolio/creations.html#airplane", tags: "avion nuage nuages rose collab collaboration", img: "logos/creations.svg" },
+      { title: "L'auberge", category: "Œuvre", url: "portfolio/creations.html#l-auberge", tags: "maison ciel rêve jaune violet orange bleu", img: "logos/creations.svg" },
       { title: "My Music Art", category: "Œuvre", url: "portfolio/creations.html#my-music-art", tags: "musique note artiste chanson", img: "logos/creations.svg" },
-      { title: "La Cité des Bulles", category: "Œuvre", url: "portfolio/creations.html#la-cite-des-bulles", tags: "ville bleu bulle bubullien", img: "logos/creations.svg" },
-      { title: "Là-Haut", category: "Œuvre", url: "portfolio/creations.html#la-haut", tags: "maison vole ballon disney pixar ciel", img: "logos/creations.svg" },
-      { title: "Architecture", category: "Œuvre", url: "portfolio/creations.html#architecture", tags: "maison ville europe", img: "logos/creations.svg" },
-      { title: "Japon", category: "Œuvre", url: "portfolio/creations.html#japon", tags: "maison vole ballon disney pixar ciel", img: "logos/creations.svg" },
-      { title: "Vegetal Desert", category: "Œuvre", url: "portfolio/creations.html#vegetal-desert", tags: "désert végétal serre sahara afrique", img: "logos/creations.svg" },
+      { title: "La Cité des Bulles", category: "Œuvre", url: "portfolio/creations.html#la-cite-des-bulles", tags: "ville bleu bulle bubullien futur futuriste écran affiche", img: "logos/creations.svg" },
+      { title: "Là-Haut", category: "Œuvre", url: "portfolio/creations.html#la-haut", tags: "maison vole ballon disney pixar ciel Karl film dessin animé", img: "logos/creations.svg" },
+      { title: "Architecture", category: "Œuvre", url: "portfolio/creations.html#architecture", tags: "maison ville europe rue", img: "logos/creations.svg" },
+      { title: "Japon", category: "Œuvre", url: "portfolio/creations.html#japon", tags: "temple japon japonais asie asiatique rouge", img: "logos/creations.svg" },
+      { title: "Vegetal Desert", category: "Œuvre", url: "portfolio/creations.html#vegetal-desert", tags: "désert végétal serre sahara afrique beige sable", img: "logos/creations.svg" },
       { title: "Red Fashion", category: "Œuvre", url: "portfolio/creations.html#red-fashion", tags: "rouge bonhomme bonshommes noir peinture", img: "logos/creations.svg" },
-      { title: "Le Café Enchanté", category: "Œuvre", url: "portfolio/creations.html#le-cafe-enchante", tags: "cafe fantastique", img: "logos/creations.svg" },
-      { title: "The Dragon Kingdom", category: "Œuvre", url: "portfolio/creations.html#the-dragon-kingdom", tags: "royaume dragon", img: "logos/creations.svg" },
+      { title: "Le Café Enchanté", category: "Œuvre", url: "portfolio/creations.html#le-cafe-enchante", tags: "cafe fantastique café", img: "logos/creations.svg" },
+      { title: "The Dragon Kingdom", category: "Œuvre", url: "portfolio/creations.html#the-dragon-kingdom", tags: "royaume dragon isométrie isométrique", img: "logos/creations.svg" },
       { title: "Espace Côtier avec un ciel paranormal", category: "Œuvre", url: "portfolio/creations.html#espace-cotier-avec-un-ciel-paranormal", tags: "rose mer côte", img: "logos/creations.svg" },
-      { title: "Little Cottage", category: "Œuvre", url: "portfolio/creations.html#little-cottage", tags: "maison noir et blanc", img: "logos/creations.svg" },
-      { title: "Route 66, USA", category: "Œuvre", url: "portfolio/creations.html#route-66-usa", tags: "route panneau états-unis", img: "logos/creations.svg" },
+      { title: "Little Cottage", category: "Œuvre", url: "portfolio/creations.html#little-cottage", tags: "maison noir blanc", img: "logos/creations.svg" },
+      { title: "Route 66, USA", category: "Œuvre", url: "portfolio/creations.html#route-66-usa", tags: "route panneau états-unis usa rouge bleu", img: "logos/creations.svg" },
       { title: "Welcome in the house", category: "Œuvre", url: "portfolio/creations.html#welcome-in-the-house", tags: "maison salon isométrie isométrique", img: "logos/creations.svg" },
-      { title: "Alfaborg, la cité des fées", category: "Œuvre", url: "portfolio/creations.html#alfaborg-la-cite-des-fees", tags: "fées arbre islande", img: "logos/creations.svg" },
+      { title: "Alfaborg, la cité des fées", category: "Œuvre", url: "portfolio/creations.html#alfaborg-la-cite-des-fees", tags: "fées arbre islande champ", img: "logos/creations.svg" },
       { title: "Hollande, Pays-Bas", category: "Œuvre", url: "portfolio/creations.html#hollande-pays-bas", tags: "moulin levé soleil", img: "logos/creations.svg" },
       { title: "Circuit de karting", category: "Œuvre", url: "portfolio/creations.html#circuit-de-karting", tags: "voiture kart pneu", img: "logos/creations.svg" },
       { title: "Cartoon World", category: "Œuvre", url: "portfolio/creations.html#cartoon-world", tags: "cabane arbre", img: "logos/creations.svg" },
-      { title: "Candy House", category: "Œuvre", url: "portfolio/projets.html#candy-house", tags: "maison bonbon nuage", img: "logos/projets.svg" },
+      { title: "Candy House", category: "Œuvre", url: "portfolio/creations.html#candy-house", tags: "maison bonbon nuage", img: "logos/creations.svg" },
       { title: "New-York", category: "Œuvre", url: "portfolio/creations.html#new-york", tags: "ville building skyscraper gratte-ciel", img: "logos/creations.svg" },
       { title: "Maison retro futuriste", category: "Œuvre", url: "portfolio/creations.html#maison-retro-futuriste", tags: "cabane", img: "logos/creations.svg" },
       { title: "Abstrakt City", category: "Œuvre", url: "portfolio/creations.html#abstrakt-city", tags: "ville", img: "logos/creations.svg" },
@@ -201,7 +277,20 @@
     searchInput.addEventListener('input', function(e) {
       const query = e.target.value.toLowerCase().trim();
       resultsContainer.innerHTML = ''; 
+      
+      // 🥚 Easter egg
+      if (easterEggs[query]) {
+        const egg = easterEggs[query];
+        let html = `<div class="easter-egg">`;
 
+        if (egg.img) html += `<img src="${egg.img}" alt="Easter egg">`;
+        if (egg.text) html += `<p>${egg.text}</p>`;
+
+        html += `</div>`;
+        resultsContainer.innerHTML = html;
+        return;
+      }
+      
       if (query.length < 2) return; 
 
       const results = siteContent.filter(item => {
@@ -239,4 +328,10 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>
+
+
+
+
+

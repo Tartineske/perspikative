@@ -49,7 +49,7 @@
     <a href="rechercher.html" class="nav-icon" title="Rechercher">
       <img src="logos/rechercher.svg" alt="Rechercher">
     </a>
-    <a href="blog.html" class="nav-icon" title="Blog">
+    <a href="blog/blog.html" class="nav-icon" title="Blog">
       <img src="logos/blog.svg" alt="Blog">
     </a>
     <a href="contact.html" class="nav-icon" title="Contact">
@@ -60,14 +60,14 @@
   <header>
     <div class="header-content">
       <div class="logo">
-        <img src="logo.svg" alt="Perspikative logo">
+        <a href="index.html"><img src="logo.svg" alt="Perspikative logo"></a>
       </div>
 
       <div class="nav-right">
         <ul class="nav-tabs">
           <li><a href="index.html" class="tab">ACCUEIL</a></li>
           <li><a href="portfolio.html" class="tab">PORTFOLIO</a></li>
-          <li><a href="blog.html" class="tab">BLOG</a></li>
+          <li><a href="blog/blog.html" class="tab">BLOG</a></li>
           <li><a href="contact.html" class="tab">CONTACT</a></li>
         </ul>
 
@@ -101,34 +101,70 @@
     </section>
 
     <section class="art-challenge">
-      <div class="theme-bubble">
-        <div class="left">
-          <h2>Thème du moment :</h2>
-          <span>Thème libre</span>
-          <p>Formats acceptés : JPG, JPEG, PNG, GIF</p>
-          <p>Contraintes : Aucune</p>
+      <div class="section-separator"></div>
+
+      <div class="left">
+        <h2>THÈME DU MOMENT :</h2>
+        <p>Réaliser une œuvre graphique (dessin, peinture, collage, dessin digital, graphisme)</p>
+        <p>Formats acceptés : photo uniquement (JPG, JPEG, PNG, PDF, WEBP, GIF)</p>
+        <p>Thème : aucun (thème libre)</p>
+        <p>Contraintes : aucune</p>
+        <p class="art-challenge-more">
+        Pour plus d'infos, <a href="https://www.whatsapp.com/channel/0029VaKP3Kd5Ui2gky1r5m3y" target="_blank" rel="noopener"> cliquez ici</a>
+        </p>
+      </div>
+
+      <div class="right">
+        <p class="deadline">Date limite : 10 février 2026, minuit (UTC+1)</p>
+        <div class="countdown">
+          <div class="count-item">
+            <span class="label">Jours</span>
+            <div class="count-bubble" id="days">0</div>
+          </div>
+          <div class="count-item">
+            <span class="label">Heures</span>
+            <div class="count-bubble" id="hours">0</div>
+          </div>
+          <div class="count-item">
+            <span class="label">Minutes</span>
+            <div class="count-bubble" id="minutes">0</div>
+          </div>
+          <div class="count-item">
+            <span class="label">Secondes</span>
+            <div class="count-bubble" id="seconds">0</div>
+          </div>
+        </div>
+      <div class="section-separator"></div>
+    </section>
+    
+    <section class="art-gallery">
+      <h2 class="art-gallery-title">GALERIE DES GAGNANTS</h2>
+      <p class="art-gallery-subtitle">
+        Les réalisations des participants des éditions précédentes
+      </p>
+
+      <div class="art-gallery-wrapper">
+        <button class="gallery-arrow left" aria-label="Précédent">‹</button>
+
+        <div class="art-gallery-track">
+          <a href="https://www.instagram.com/supernovaaa_art_" target="_blank" class="art-card">
+            <img src="portfolio/art-challenge/art1.webp" alt="Dessin participant 1">
+          </a>
+          <a href="https://instagram.com/participant2" target="_blank" class="art-card">
+            <img src="portfolio/art-challenge/art2.webp" alt="Dessin participant 2">
+          </a>
+          <a href="https://instagram.com/participant3" target="_blank" class="art-card">
+            <img src="portfolio/art-challenge/art3.webp" alt="Dessin participant 3">
+          </a>
+          <a href="https://instagram.com/participant4" target="_blank" class="art-card">
+            <img src="portfolio/creations/38.webp" alt="Dessin participant 4">
+          </a>
+          <a href="https://instagram.com/participant5" target="_blank" class="art-card">
+            <img src="portfolio/creations/37.webp" alt="Dessin participant 5">
+          </a>
         </div>
 
-        <div class="right">
-          <p class="deadline">Date limite : 10 février 2026 à minuit</p>
-          <div class="countdown">
-            <div class="count-item">
-              <span class="label">Jours</span>
-              <div class="count-bubble" id="days">0</div>
-            </div>
-            <div class="count-item">
-              <span class="label">Heures</span>
-              <div class="count-bubble" id="hours">0</div>
-            </div>
-            <div class="count-item">
-              <span class="label">Minutes</span>
-              <div class="count-bubble" id="minutes">0</div>
-            </div>
-            <div class="count-item">
-              <span class="label">Secondes</span>
-              <div class="count-bubble" id="seconds">0</div>
-            </div>
-          </div>
+        <button class="gallery-arrow right" aria-label="Suivant">›</button>
         </div>
       </div>
     </section>
@@ -152,6 +188,20 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+</script>
+
+<script>
+  const track = document.querySelector('.art-gallery-track');
+  const leftBtn = document.querySelector('.gallery-arrow.left');
+  const rightBtn = document.querySelector('.gallery-arrow.right');
+
+  leftBtn.addEventListener('click', () => {
+    track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' });
+  });
+
+  rightBtn.addEventListener('click', () => {
+    track.scrollBy({ left: track.clientWidth, behavior: 'smooth' });
+  });
 </script>
 
   </main>
