@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // Icône burger (menu/fermer)
     if (menuIcon) {
       const currentSrc = menuIcon.getAttribute('src') || menuIcon.src;
-      const basePath = currentSrc ? currentSrc.substring(0, currentSrc.lastIndexOf('logos/')) : '';
-      menuIcon.src = isOpen ? `${basePath}logos/fermer.svg` : `${basePath}logos/menu.svg`;
+      const basePath = currentSrc ? currentSrc.substring(0, currentSrc.lastIndexOf('icons/')) : '';
+      menuIcon.src = isOpen ? `${basePath}icons/fermer.svg` : `${basePath}icons/menu.svg`;
     }
 
     // Blur, scroll lock et état body pour overlay
