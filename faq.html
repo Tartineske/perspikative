@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <title>Blog</title>
-  
-  <meta name="description" content="Le blog Perspikative explore l'art visuel, le processus créatif et les coulisses des dessins.">
-  <meta name="keywords" content="blog artistique, art visuel, processus créatif, inspiration artistique, création visuelle, Perspikative">
+  <title>FAQ</title>
+
+  <meta name="description" content="Retrouve les réponses aux questions fréquentes sur Perspikative !">
+  <meta name="keywords" content="faq, foire aux questions, questions fréquentes, aide Perspikative, aide site artistique, art visuel, informations Perspikative">
   <meta name="robots" content="index, follow">
 
   <meta name="theme-color" content="#58b3a2" media="(prefers-color-scheme: light)">
@@ -18,7 +18,6 @@
 
   <link rel="stylesheet" href="../style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
 <!-- Google tag (gtag.js) -->
@@ -31,7 +30,7 @@
   gtag('config', 'G-MH68ZWLYM8');
 </script>
 
-<body class="blog">
+<body class="faq">
 
   <nav class="mobile-nav">
     <a href="../index.html" class="nav-icon" title="Accueil">
@@ -43,8 +42,8 @@
     <a href="../rechercher.html" class="nav-icon" title="Rechercher">
       <img src="../logos/rechercher.svg" alt="Rechercher">
     </a>
-    <a href="../blog/blog.html" class="nav-icon active" title="Blog">
-      <img src="../logos/blog-active.svg" alt="Blog">
+    <a href="../blog/blog.html" class="nav-icon" title="Blog">
+      <img src="../logos/blog.svg" alt="Blog">
     </a>
     <a href="../contact.html" class="nav-icon" title="Contact">
       <img src="../logos/contact.svg" alt="Contact">
@@ -56,11 +55,12 @@
       <div class="logo">
         <img src="../logo.svg" alt="Perspikative logo">
       </div>
+
       <div class="nav-right">
         <ul class="nav-tabs">
           <li><a href="../index.html" class="tab">ACCUEIL</a></li>
           <li><a href="../portfolio.html" class="tab">PORTFOLIO</a></li>
-          <li><a href="../blog/blog.html" class="tab active">BLOG</a></li>
+          <li><a href="../blog/blog.html" class="tab">BLOG</a></li>
           <li><a href="../contact.html" class="tab">CONTACT</a></li>
         </ul>
 
@@ -81,60 +81,71 @@
 
   <div class="blur-overlay"></div>
 
-  <main class="blog-main">
-    <section class="blog-grid">
+  <main class="faq-page">
 
-      <a href="ysteme-de-likes.html" class="blog-link">
-        <article class="blog-card">
-          <div class="blog-image">
-            <img src="../portfolio/creations/41.webp" alt="Aperçu du système de likes">
-            <span class="blog-tag fonctionnalite">Fonctionnalité</span>
-          </div>
-          <div class="blog-content">
-            <h2>Nouveau système de likes</h2>
-            <p>
-              Un cœur discret, une animation fluide et un compteur intelligent
-              pour valoriser chaque création sans perturber l'expérience visuelle.
-            </p>
-          </div>
-        </article>
+    <section class="faq-header">
+      <h1>FAQ</h1>
+      <p>Ici, on répond à toutes vos questions.</p>
+    </section>
+
+    <section class="faq-categories">
+      <a href="general/general.html" class="faq-card">
+        <div class="faq-icon">
+          <img src="../logos/general.svg" alt="Icône Général">
+        </div>
+        <span>Général</span>
       </a>
 
-
-      <a href="systeme-de-likes.html" class="blog-link"></a>
-        <article class="blog-card">
-          <div class="blog-image">
-            <img src="../portfolio/creations/40.webp" alt="Nouvelle création">
-            <span class="blog-tag creation">Nouvelle création</span>
-          </div>
-          <div class="blog-content">
-            <h2>Illustration — Entre deux mondes</h2>
-            <p>
-              Une exploration graphique entre rêve et architecture,
-              là où les perspectives commencent à mentir.
-            </p>
-          </div>
-        </article>
+      <a href="portfolio/portfolio.html" class="faq-card">
+        <div class="faq-icon">
+          <img src="../logos/portfolio.svg" alt="Icône Portfolio">
+        </div>
+        <span>Portfolio</span>
       </a>
 
-      <a href="systeme-de-likes.html" class="blog-link"></a>
-        <article class="blog-card">
-          <div class="blog-image">
-            <img src="../portfolio/creations/39.webp" alt="Actualité Perspikative">
-            <span class="blog-tag actu">Actu</span>
-          </div>
-          <div class="blog-content">
-            <h2>Perspikative évolue</h2>
-            <p>
-              Nouvelle direction visuelle, optimisations mobiles et
-              petites expériences interactives en préparation.
-            </p>
-          </div>
-        </article>
+      <a href="contact/contact.html" class="faq-card">
+        <div class="faq-icon">
+          <img src="../logos/contact.svg" alt="Icône Contact">
+        </div>
+        <span>Contact</span>
+      </a>
+
+      <a href="art-challenge/art-challenge.html" class="faq-card">
+        <div class="faq-icon">
+          <img src="../logos/art-challenge.svg" alt="Icône ART Challenge">
+        </div>
+        <span>ART Challenge</span>
+      </a>
+
+      <a href="blog/blog.html" class="faq-card">
+        <div class="faq-icon">
+          <img src="../logos/blog.svg" alt="Icône Blog">
+        </div>
+        <span>Blog</span>
+      </a>
+
+      <a href="recherche/recherche.html" class="faq-card">
+        <div class="faq-icon">
+          <img src="../logos/rechercher.svg" alt="Icône Rechercher">
+        </div>
+        <span>Recherche</span>
+      </a>
+
+      <a href="confidentialite/confidentialite.html" class="faq-card">
+        <div class="faq-icon">
+          <img src="../logos/confidentialite.svg" alt="Icône Confidentialité">
+        </div>
+        <span>Confidentialité</span>
+      </a>
+
+      <a href="fonctionnalites/fonctionnalites.html" class="faq-card">
+        <div class="faq-icon">
+          <img src="../logos/fonctionnalites.svg" alt="Icône Fonctionnalités">
+        </div>
+        <span>Fonctionnalités</span>
       </a>
     </section>
   </main>
-
 
   <footer>
     <div class="social-icons">
