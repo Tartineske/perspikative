@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>FAQ - ART Challenge</title>
+
+  <meta name="theme-color" content="#58b3a2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#344f4a" media="(prefers-color-scheme: dark)">
+
+  <link rel="icon" type="image/png" href="../../favicon-light.png" media="(prefers-color-scheme: dark)">
+  <link rel="icon" type="image/png" href="../../favicon-dark.png" media="(prefers-color-scheme: light)">
+
+  <link rel="stylesheet" href="../../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap" rel="stylesheet" />
+  
+  <style>
+    /* Styles FAQ intégrés */
+    .faq-section {
+      padding: 60px 15px;
+    }
+
+    .faq-section .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .faq-section h2 {
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .faq-section .description {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      color: #ffffff;
+    }
+
+    .faq-item {
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      margin-bottom: 1rem;
+      background: #62a78a;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item:hover {
+      border-color: #4aa9a1;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .faq-question:hover {
+      background: rgba(0,0,0,0.03);
+    }
+
+    .faq-question h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    .faq-arrow {
+      transition: transform 0.3s ease;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      padding: 0 16px;
+      transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease;
+    }
+
+    .faq-answer.open {
+      opacity: 1;
+      padding: 16px;
+      max-height: 500px; /* assez grand pour le contenu */
+    }
+
+    .faq-answer p {
+      margin: 0;
+      color: #555;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-S1Z45TJRN4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-S1Z45TJRN4');
+</script>
+
+<body class="faq">
+
+  <nav class="mobile-nav">
+    <a href="../../index.html" class="nav-icon" title="Accueil">
+      <img src="../../logos/accueil.svg" alt="Accueil">
+    </a>
+    <a href="../../portfolio.html" class="nav-icon" title="Portfolio">
+      <img src="../../logos/portfolio.svg" alt="Portfolio">
+    </a>
+    <a href="../../rechercher.html" class="nav-icon" title="Rechercher">
+      <img src="../../logos/rechercher.svg" alt="Rechercher">
+    </a>
+    <a href="../../blog/blog.html" class="nav-icon" title="Blog">
+      <img src="../../logos/blog.svg" alt="Blog">
+    </a>
+    <a href="../../contact.html" class="nav-icon" title="Contact">
+      <img src="../../logos/contact.svg" alt="Contact">
+    </a>
+  </nav>
+
+  <header>
+    <div class="header-content">
+      <div class="logo">
+        <img src="../../logo.svg" alt="Perspikative logo">
+      </div>
+
+      <div class="nav-right">
+        <ul class="nav-tabs">
+          <li><a href="../faq.html" class="tab">RETOURNER À LA FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="faq-section">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <p class="description">Find answers to common questions about our product and services</p>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What is Smoothui?</h3>
+              <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+            <div class="faq-answer">
+              <p>Smoothui is a modern UI component library that provides beautiful, animated components for building stunning user interfaces. It includes pre-built components with smooth animations and customizable themes.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How do I get started?</h3>
+              <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+            <div class="faq-answer">
+              <p>Getting started is easy! Simply install the package via npm or yarn, import the components you need, and start building. We provide comprehensive documentation and examples to help you get up and running quickly.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Is it free to use?</h3>
+              <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+            <div class="faq-answer">
+              <p>Yes! Smoothui is completely free and open source. You can use it in both personal and commercial projects without any restrictions. We believe in making beautiful UI components accessible to everyone.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>Can I customize the components?</h3>
+              <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+            <div class="faq-answer">
+              <p>Absolutely! All components are fully customizable. You can modify colors, spacing, animations, and more using CSS variables or by extending the component classes. We also provide a theming system for easy customization.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>What frameworks are supported?</h3>
+              <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+            <div class="faq-answer">
+              <p>Currently, Smoothui supports React and Next.js. We're working on expanding support to other popular frameworks like Vue, Svelte, and Angular in the coming months.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-question">
+              <h3>How often do you release updates?</h3>
+              <svg class="faq-arrow" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+            <div class="faq-answer">
+              <p>We release updates regularly, typically every 2-3 weeks. This includes new components, bug fixes, performance improvements, and new features. You can follow our changelog to stay updated on the latest releases.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="social-icons">
+      <a href="https://linktr.ee/perspikative" target="_blank" aria-label="Linktree">
+        <img src="../../logos/linktree.svg" alt="Linktree">
+      </a>
+     <a href="https://www.whatsapp.com/channel/0029VaKP3Kd5Ui2gky1r5m3y" target="_blank" aria-label="Chaîne WhatsApp">
+        <img src="../../logos/whatsapp-channel.svg" alt="Chaîne WhatsApp">
+      </a>
+      <a href="https://www.instagram.com/perspikative" target="_blank" aria-label="Instagram">
+        <img src="../../logos/instagram.svg" alt="Instagram">
+      </a>
+      <a href="https://youtube.com/@perspikative" target="_blank" aria-label="YouTube">
+        <img src="../../logos/youtube.svg" alt="YouTube">
+      </a>
+      <a href="https://www.pinterest.com/perspikative" target="_blank" aria-label="Pinterest">
+        <img src="../../logos/pinterest.svg" alt="Pinterest">
+      </a>
+    </div>
+
+    <p>&copy; 2026 Perspikative. Tous droits réservés.</p>
+    <p><a href="../../mentions-legales.html" class="footer-link">Mentions légales</a></p>
+    <p><a href="../../politique-de-confidentialite.html" class="footer-link">Politique de confidentialité</a></p>
+  </footer>
+
+  <a href="../../rechercher.html" class="search-float-btn" title="Rechercher">
+    <img src="../../logos/rechercher.svg" alt="Rechercher">
+  </a>
+
+  <script src="../script.js"></script>
+
+  <script>
+    // JS pour accordéon FAQ
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+      const question = item.querySelector('.faq-question');
+      const answer = item.querySelector('.faq-answer');
+      const arrow = item.querySelector('.faq-arrow');
+
+      question.addEventListener('click', () => {
+        const isOpen = answer.classList.contains('open');
+
+        // Fermer tous les autres
+        faqItems.forEach(i => {
+          i.querySelector('.faq-answer').classList.remove('open');
+          i.querySelector('.faq-arrow').style.transform = 'rotate(0deg)';
+        });
+
+        if(!isOpen) {
+          answer.classList.add('open');
+          arrow.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
