@@ -53,6 +53,14 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- FAQ -->
+  <url>
+    <loc>https://www.perspikative.com/faq</loc>
+    <lastmod>2025-01-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
   <!-- Mentions légales -->
   <url>
     <loc>https://www.perspikative.com/mentions-legales</loc>
