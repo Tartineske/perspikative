@@ -53,19 +53,24 @@
     <priority>0.7</priority>
   </url>
 
-  <!-- Mentions légales / Politique de confidentialité -->
+  <!-- Mentions légales -->
   <url>
     <loc>https://www.perspikative.com/mentions-legales</loc>
     <lastmod>2025-01-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+
+  <-- Politique de confidentialité -->
   <url>
     <loc>https://www.perspikative.com/politique-de-confidentialite</loc>
     <lastmod>2025-01-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
+
+  <-- Position sur l'IA-->
+  <url>
 
 <loc>https://www.perspikative.com/position-ia</loc>
     <lastmod>2025-01-26</lastmod>
