@@ -219,7 +219,7 @@ header h1 {
   cursor: pointer;
   user-select: none;
   align-items: center;
-  font-size: 1rem;
+  font-size: 1.05rem;
   flex-wrap: wrap;
 }
 
@@ -1225,8 +1225,8 @@ main.creations h2 {
 }
 
 .search-float-btn img {
-  width: 30px;
-  height: 30px;
+  width: 31px;
+  height: 31px;
 }
 
 .search-float-btn:hover {
@@ -2306,7 +2306,7 @@ footer {
   text-align: center;
   padding: 15px;
   padding-top: 0px;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   border-radius: 20px 20px 0 0;
   border: 1px solid rgba(255 255 255 / 0.25);
   font-family: "Rubik", Arial, sans-serif;
@@ -2320,7 +2320,7 @@ footer p {
   line-height: 1.3;
   margin: 0; 
   font-family: "Rubik", Arial, sans-serif;
-  font-weight: 100 !important;
+  font-weight: 120 !important;
 }
 
 footer a.footer-link {
@@ -2376,7 +2376,7 @@ footer a.footer-link:hover::after {
 
 @media (max-width: 900px) {
   footer {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     padding: 12px;
   }
 
@@ -2792,13 +2792,13 @@ html[data-theme="dark"] {
 .nav-tabs .tab {
   display: flex;
   align-items: center;
-  gap: 8px; /* reste le même */
+  gap: 7px; /* reste le même */
 }
 
 /* conteneur fixe pour l'icône */
 .nav-tabs .tab-icon {
   display: inline-block;
-  width: 24px;   /* largeur fixe du conteneur */
-  height: 24px;  /* hauteur fixe du conteneur */
-  transform: scale(1.3); /* agrandit sans affecter le gap */
+  width: 25px;   /* largeur fixe du conteneur */
+  height: 25px;  /* hauteur fixe du conteneur */
+  transform: scale(1.26); /* agrandit sans affecter le gap */
 }
