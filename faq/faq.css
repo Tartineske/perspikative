@@ -1,7 +1,7 @@
 /* ============================= FAQ STYLES ============================= */
 
 .faq-container {
-  max-width: 800px;
+  max-width: 500px;
   margin: 20px auto;
   padding: 15px;
 }
@@ -23,7 +23,7 @@
 
 .faq-item {
   border: 0.5px solid rgba(88, 179, 162, 0.2);
-  border-radius: 20px;
+  border-radius: 25px;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -37,7 +37,7 @@
 
 .faq-question {
   width: 100%;
-  padding: 6px 14px;
+  padding: 8px 16px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -148,7 +148,7 @@
 
   /* Override padding from style.css for FAQ pages */
   body.faq main {
-    padding-left: 10 !important;
-    padding-right: 10 !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
 }
