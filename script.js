@@ -434,5 +434,38 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// ============================= 13. FAQ DÉROULANTE =============================
+
+document.addEventListener('DOMContentLoaded', () => {
+  const faqQuestions = document.querySelectorAll('.faq-question');
+
+  faqQuestions.forEach(question => {
+    question.addEventListener('click', () => {
+      const faqItem = question.closest('.faq-item');
+      const isActive = faqItem.classList.contains('active');
+
+      // Fermer tous les autres éléments de FAQ
+      document.querySelectorAll('.faq-item.active').forEach(item => {
+        if (item !== faqItem) {
+          item.classList.remove('active');
+          const btn = item.querySelector('.faq-question');
+          if (btn) {
+            btn.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+
+      // Basculer l'élément actuel
+      if (isActive) {
+        faqItem.classList.remove('active');
+        question.setAttribute('aria-expanded', 'false');
+      } else {
+        faqItem.classList.add('active');
+        question.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+});
+
 
 // ============================= FIN DU SCRIPT =============================
