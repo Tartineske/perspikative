@@ -204,13 +204,16 @@ permalink: /rechercher
       "capybara": {
         img: "/portfolio/easter-eggs/capybara.webp"
       },
+      "...": {
+        text: "..."
+      },
     };
 
     // --- 1. BASE DE DONNÉES ---
     const siteContent = [
       { title: "Accueil", category: "Page", url: "/", tags: "maison home accueil perspikative", img: "/icons/accueil.svg" },
-      { title: "Portfolio", category: "Portfolio", url: "/portfolio/", tags: "dessin art création illustration projet couleur traditionnel digital peinture aquarelle", img: "/icons/portfolio.svg" },
-      { title: "Créations", category: "Portfolio", url: "/portfolio/creations/", tags: "créations dessin peinture art couleur traditionnel", img: "/icons/creations.svg" },
+      { title: "Portfolio", category: "Portfolio", url: "/portfolio", tags: "dessin art création illustration projet couleur traditionnel digital peinture aquarelle", img: "/icons/portfolio.svg" },
+      { title: "Créations", category: "Portfolio", url: "/portfolio/creations", tags: "créations dessin peinture art couleur traditionnel", img: "/icons/creations.svg" },
       { title: "Illustrations", category: "Portfolio", url: "/portfolio/illustrations", tags: "illustrations dessin digital", img: "/icons/illustrations.svg" },
       { title: "Projets", category: "Portfolio", url: "/portfolio/projets", tags: "projets dessin concept traditionnel", img: "/icons/projets.svg" },
       { title: "Art Challenge", category: "Challenge", url: "/art-challenge", tags: "art challenge défi concours thème dessin", img: "/icons/art-challenge.svg" },
@@ -222,19 +225,19 @@ permalink: /rechercher
       { title: "Politique de confidentialité", category: "Légal", url: "/politique-de-confidentialite", tags: "politique de confidentialité", img: "/icons/politique-de-confidentialite.svg" },
       { title: "Position sur l'IA", category: "Légal", url: "/position-ia", tags: "position ia intelligence artificielle", img: "/icons/contrat.svg" },
 
-      { title: "FAQ - Général", category: "FAQ", url: "/faq/general/", tags: "FAQ général", img: "/icons/general.svg" },
-      { title: "FAQ - Portfolio", category: "FAQ", url: "/faq/portfolio/", tags: "FAQ portfolio", img: "/icons/portfolio.svg" },
-      { title: "FAQ - Contact", category: "FAQ", url: "/faq/contact/", tags: "FAQ contact", img: "/icons/contact.svg" },
-      { title: "FAQ - Confidentialié", category: "FAQ", url: "/faq/confidentialite/", tags: "FAQ confidentialité", img: "/icons/confidentialite.svg" },
-      { title: "FAQ - Actus", category: "FAQ", url: "/faq/actus/", tags: "FAQ actus", img: "/icons/actus.svg" },
-      { title: "FAQ - Fonctionnalités", category: "FAQ", url: "/faq/fonctionnalites/", tags: "FAQ fonctionnalités", img: "/icons/fonctionnalites.svg" },
-      { title: "FAQ - ART Challenge", category: "FAQ", url: "/faq/art-challenge/", tags: "FAQ art challenge", img: "/icons/art-challenge.svg" },
-      { title: "FAQ - Recherche", category: "FAQ", url: "/faq/recherche/", tags: "FAQ recherche", img: "/icons/rechercher.svg" },
+      { title: "FAQ - Général", category: "FAQ", url: "/faq/general", tags: "FAQ général", img: "/icons/general.svg" },
+      { title: "FAQ - Portfolio", category: "FAQ", url: "/faq/portfolio", tags: "FAQ portfolio", img: "/icons/portfolio.svg" },
+      { title: "FAQ - Contact", category: "FAQ", url: "/faq/contact", tags: "FAQ contact", img: "/icons/contact.svg" },
+      { title: "FAQ - Confidentialié", category: "FAQ", url: "/faq/confidentialite", tags: "FAQ confidentialité", img: "/icons/confidentialite.svg" },
+      { title: "FAQ - Actus", category: "FAQ", url: "/faq/actus", tags: "FAQ actus", img: "/icons/actus.svg" },
+      { title: "FAQ - Fonctionnalités", category: "FAQ", url: "/faq/fonctionnalites", tags: "FAQ fonctionnalités", img: "/icons/fonctionnalites.svg" },
+      { title: "FAQ - ART Challenge", category: "FAQ", url: "/faq/art-challenge", tags: "FAQ art challenge", img: "/icons/art-challenge.svg" },
+      { title: "FAQ - Recherche", category: "FAQ", url: "/faq/recherche", tags: "FAQ recherche", img: "/icons/rechercher.svg" },
 
 
-      { title: "Mode sombre", category: "Paramètres", url: "/parametres/", tags: "noir nuit", img: "/icons/mode-sombre.svg" },
-      { title: "Police contrastée", category: "Paramètres", url: "/parametres/", tags: "contraste gras accessible accessibilité visibilité", img: "/icons/police.svg" },
-      { title: "Animations", category: "Paramètres", url: "/parametres/", tags: "animations", img: "/icons/animations.svg" },
+      { title: "Mode sombre", category: "Paramètres", url: "/parametres", tags: "noir nuit", img: "/icons/mode-sombre.svg" },
+      { title: "Police contrastée", category: "Paramètres", url: "/parametres", tags: "contraste gras accessible accessibilité visibilité", img: "/icons/police.svg" },
+      { title: "Animations", category: "Paramètres", url: "/parametres", tags: "animations", img: "/icons/animations.svg" },
 
       { title: "YouTube", category: "Réseaux sociaux", url: "https://youtube.com/@perspikative", tags: "YouTube vidéo", img: "/icons/youtube.svg" },
       { title: "Instagram", category: "Réseaux sociaux", url: "https://instagram.com/perspikative", tags: "Instagram", img: "/icons/instagram.svg" },
@@ -284,8 +287,8 @@ permalink: /rechercher
       { title: "Minecraft", category: "Œuvre", url: "portfolio/creations.html#minecraft", tags: "bloc isométrique jeu vidéo", img: "/icons/creations.svg" },
 
 
-      { title: "ART Tower", category: "Projet", url: "/portfolio/projets/#art-tower", tags: "tour architecture collab collaboration métier art", img: "/icons/projets.svg" },
-      { title: "Perspika City", category: "Projet", url: "/portfolio/projets/#perspika-city", tags: "ile volante collab collaboration", img: "/icons/projets.svg" },
+      { title: "ART Tower", category: "Projet", url: "/portfolio/projets#art-tower", tags: "tour architecture collab collaboration métier art", img: "/icons/projets.svg" },
+      { title: "Perspika City", category: "Projet", url: "/portfolio/projets#perspika-city", tags: "ile volante collab collaboration", img: "/icons/projets.svg" },
     ];
 
     // --- 2. MOTEUR ---
