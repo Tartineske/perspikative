@@ -103,16 +103,16 @@
 
 @media (max-width: 768px) {
   .faq-container {
-    padding: 15px;
+    padding: 10px;
   }
 
   .faq-container h1 {
-    font-size: 2rem;
+    font-size: 2.1rem;
     margin-bottom: 30px;
   }
 
   .faq-question {
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 14px 16px;
   }
 
@@ -144,5 +144,11 @@
 
   .faq-icon {
     font-size: 1.2rem;
+  }
+
+  /* Override padding from style.css for FAQ pages */
+  body.faq main {
+    padding-left: 10 !important;
+    padding-right: 10 !important;
   }
 }
